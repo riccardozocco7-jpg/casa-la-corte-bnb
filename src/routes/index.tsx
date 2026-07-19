@@ -16,9 +16,9 @@ export const Route = createFileRoute("/")({
 });
 
 const alloggi = [
-  { slug: "riccardo", nome: "Riccardo", desc: "Camera matrimoniale con vista sugli ulivi." },
-  { slug: "andrea", nome: "Andrea", desc: "Suite luminosa, ideale per una coppia in cerca di quiete." },
-  { slug: "giorgio", nome: "Giorgio", desc: "Camera famigliare, spaziosa e accogliente." },
+  { slug: "riccardo", nome: "Riccardo", desc: "Bifocale." },
+  { slug: "andrea", nome: "Andrea", desc: "Stanza sopra con affaccio al campanile della chiesa." },
+  { slug: "giorgio", nome: "Giorgio", desc: "Monolocale, spazioso e accogliente." },
 ] as const;
 
 const servizi = [
