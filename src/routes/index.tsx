@@ -105,7 +105,7 @@ function Home() {
           <div className="mb-12 flex items-end justify-between">
             <div>
               <p className="mb-3 text-xs uppercase tracking-[0.25em] text-accent">Gli alloggi</p>
-              <h2 className="font-serif text-4xl">Tre stanze, tre nomi di famiglia.</h2>
+              <h2 className="font-serif text-4xl">Tre stanze, tre figli.</h2>
             </div>
             <Link to="/alloggi" className="hidden text-sm uppercase tracking-widest text-primary hover:opacity-70 md:inline-block">
               Vedi tutti →
