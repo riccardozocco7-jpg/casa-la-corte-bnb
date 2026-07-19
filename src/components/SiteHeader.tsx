@@ -19,7 +19,7 @@ export function SiteHeader() {
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 md:px-6">
         <Link to="/" className="flex items-center gap-2 font-serif text-xl tracking-tight">
           <span className="inline-block h-8 w-8 rounded-full border border-primary/60" aria-hidden />
-          <span>B&amp;B Marcello</span>
+          <span>Corte degli Angeli</span>
         </Link>
 
         <nav className="hidden items-center gap-7 md:flex">
