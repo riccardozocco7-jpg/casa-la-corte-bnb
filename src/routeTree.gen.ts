@@ -9,38 +9,134 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as StrutturaRouteImport } from './routes/struttura'
+import { Route as DintorniRouteImport } from './routes/dintorni'
+import { Route as ContattiRouteImport } from './routes/contatti'
+import { Route as AlloggiRouteImport } from './routes/alloggi'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AlloggiSlugRouteImport } from './routes/alloggi.$slug'
 
+const StrutturaRoute = StrutturaRouteImport.update({
+  id: '/struttura',
+  path: '/struttura',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DintorniRoute = DintorniRouteImport.update({
+  id: '/dintorni',
+  path: '/dintorni',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContattiRoute = ContattiRouteImport.update({
+  id: '/contatti',
+  path: '/contatti',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AlloggiRoute = AlloggiRouteImport.update({
+  id: '/alloggi',
+  path: '/alloggi',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AlloggiSlugRoute = AlloggiSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => AlloggiRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/alloggi': typeof AlloggiRouteWithChildren
+  '/contatti': typeof ContattiRoute
+  '/dintorni': typeof DintorniRoute
+  '/struttura': typeof StrutturaRoute
+  '/alloggi/$slug': typeof AlloggiSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/alloggi': typeof AlloggiRouteWithChildren
+  '/contatti': typeof ContattiRoute
+  '/dintorni': typeof DintorniRoute
+  '/struttura': typeof StrutturaRoute
+  '/alloggi/$slug': typeof AlloggiSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/alloggi': typeof AlloggiRouteWithChildren
+  '/contatti': typeof ContattiRoute
+  '/dintorni': typeof DintorniRoute
+  '/struttura': typeof StrutturaRoute
+  '/alloggi/$slug': typeof AlloggiSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/alloggi'
+    | '/contatti'
+    | '/dintorni'
+    | '/struttura'
+    | '/alloggi/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/alloggi'
+    | '/contatti'
+    | '/dintorni'
+    | '/struttura'
+    | '/alloggi/$slug'
+  id:
+    | '__root__'
+    | '/'
+    | '/alloggi'
+    | '/contatti'
+    | '/dintorni'
+    | '/struttura'
+    | '/alloggi/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AlloggiRoute: typeof AlloggiRouteWithChildren
+  ContattiRoute: typeof ContattiRoute
+  DintorniRoute: typeof DintorniRoute
+  StrutturaRoute: typeof StrutturaRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/struttura': {
+      id: '/struttura'
+      path: '/struttura'
+      fullPath: '/struttura'
+      preLoaderRoute: typeof StrutturaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dintorni': {
+      id: '/dintorni'
+      path: '/dintorni'
+      fullPath: '/dintorni'
+      preLoaderRoute: typeof DintorniRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contatti': {
+      id: '/contatti'
+      path: '/contatti'
+      fullPath: '/contatti'
+      preLoaderRoute: typeof ContattiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/alloggi': {
+      id: '/alloggi'
+      path: '/alloggi'
+      fullPath: '/alloggi'
+      preLoaderRoute: typeof AlloggiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,22 +144,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/alloggi/$slug': {
+      id: '/alloggi/$slug'
+      path: '/$slug'
+      fullPath: '/alloggi/$slug'
+      preLoaderRoute: typeof AlloggiSlugRouteImport
+      parentRoute: typeof AlloggiRoute
+    }
   }
 }
 
+interface AlloggiRouteChildren {
+  AlloggiSlugRoute: typeof AlloggiSlugRoute
+}
+
+const AlloggiRouteChildren: AlloggiRouteChildren = {
+  AlloggiSlugRoute: AlloggiSlugRoute,
+}
+
+const AlloggiRouteWithChildren =
+  AlloggiRoute._addFileChildren(AlloggiRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AlloggiRoute: AlloggiRouteWithChildren,
+  ContattiRoute: ContattiRoute,
+  DintorniRoute: DintorniRoute,
+  StrutturaRoute: StrutturaRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

@@ -1,24 +1,193 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { PhotoPlaceholder } from "../components/PhotoPlaceholder";
+import {
+  Wifi,
+  Car,
+  Coffee,
+  Bus,
+  Snowflake,
+  Trees,
+  MapPin,
+  ArrowRight,
+} from "lucide-react";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
-  component: Index,
+  component: Home,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
+const alloggi = [
+  { slug: "riccardo", nome: "Riccardo", desc: "Camera matrimoniale con vista sugli ulivi." },
+  { slug: "andrea", nome: "Andrea", desc: "Suite luminosa, ideale per una coppia in cerca di quiete." },
+  { slug: "giorgio", nome: "Giorgio", desc: "Camera famigliare, spaziosa e accogliente." },
+] as const;
+
+const servizi = [
+  { icon: Car, label: "Parcheggio privato" },
+  { icon: Wifi, label: "Wi-Fi gratuito" },
+  { icon: Coffee, label: "Colazione fatta in casa" },
+  { icon: Bus, label: "Navetta su richiesta" },
+  { icon: Snowflake, label: "Aria condizionata" },
+  { icon: Trees, label: "Giardino con ulivi" },
+];
+
+const distanze = [
+  { luogo: "Mare di Tricase Porto", km: "5 km" },
+  { luogo: "Pescoluse — Maldive del Salento", km: "18 km" },
+  { luogo: "Torre Vado", km: "15 km" },
+  { luogo: "Castro Marina", km: "12 km" },
+];
+
+function Home() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <>
+      {/* HERO */}
+      <section className="relative overflow-hidden bg-secondary/30">
+        <div className="mx-auto grid max-w-6xl gap-10 px-4 py-16 md:grid-cols-2 md:items-center md:px-6 md:py-24">
+          <div>
+            <p className="mb-4 text-xs uppercase tracking-[0.25em] text-primary">
+              Salento · Tricase
+            </p>
+            <h1 className="font-serif text-5xl leading-tight md:text-6xl">
+              Un rifugio di famiglia, tra ulivi e mare.
+            </h1>
+            <p className="mt-6 max-w-md text-lg text-muted-foreground">
+              Tre alloggi curati, ospitalità autentica e uno sguardo attento alla
+              sostenibilità. Il Salento come lo vive chi ci è cresciuto.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a
+                href="#"
+                className="rounded-full bg-primary px-6 py-3 text-sm font-medium uppercase tracking-widest text-primary-foreground hover:opacity-90"
+              >
+                Prenota ora
+              </a>
+              <Link
+                to="/alloggi"
+                className="rounded-full border border-foreground/20 px-6 py-3 text-sm font-medium uppercase tracking-widest hover:border-primary hover:text-primary"
+              >
+                Scopri gli alloggi
+              </Link>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-3 gap-2">
+            <PhotoPlaceholder label="Esterno · scatto principale" ratio="portrait" className="col-span-2 row-span-2" />
+            <PhotoPlaceholder label="Dettaglio" ratio="square" />
+            <PhotoPlaceholder label="Giardino" ratio="square" />
+          </div>
+        </div>
+      </section>
+
+      {/* STORIA */}
+      <section className="mx-auto max-w-6xl px-4 py-20 md:px-6">
+        <div className="grid gap-12 md:grid-cols-2 md:items-center">
+          <PhotoPlaceholder label="La famiglia · ritratto" ratio="landscape" />
+          <div>
+            <p className="mb-3 text-xs uppercase tracking-[0.25em] text-accent">La nostra storia</p>
+            <h2 className="font-serif text-4xl">Una casa che accoglie da tre generazioni.</h2>
+            <p className="mt-5 text-muted-foreground">
+              Marcello, Rosaria e la famiglia hanno trasformato la casa di sempre in un piccolo B&amp;B a
+              conduzione familiare. Materiali naturali, energia rinnovabile, prodotti a chilometro
+              zero: crediamo che l'ospitalità migliore sia quella che rispetta il luogo che la ospita.
+            </p>
+            <Link
+              to="/struttura"
+              className="mt-6 inline-flex items-center gap-2 text-sm font-medium uppercase tracking-widest text-primary hover:gap-3 transition-all"
+            >
+              Scopri la struttura <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ALLOGGI */}
+      <section className="bg-secondary/30 py-20">
+        <div className="mx-auto max-w-6xl px-4 md:px-6">
+          <div className="mb-12 flex items-end justify-between">
+            <div>
+              <p className="mb-3 text-xs uppercase tracking-[0.25em] text-accent">Gli alloggi</p>
+              <h2 className="font-serif text-4xl">Tre stanze, tre nomi di famiglia.</h2>
+            </div>
+            <Link to="/alloggi" className="hidden text-sm uppercase tracking-widest text-primary hover:opacity-70 md:inline-block">
+              Vedi tutti →
+            </Link>
+          </div>
+
+          <div className="grid gap-8 md:grid-cols-3">
+            {alloggi.map((a) => (
+              <Link key={a.slug} to="/alloggi/$slug" params={{ slug: a.slug }} className="group">
+                <PhotoPlaceholder label={`Camera ${a.nome}`} ratio="portrait" />
+                <h3 className="mt-4 font-serif text-2xl group-hover:text-primary">{a.nome}</h3>
+                <p className="mt-1 text-sm text-muted-foreground">{a.desc}</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SERVIZI */}
+      <section className="mx-auto max-w-6xl px-4 py-20 md:px-6">
+        <p className="mb-3 text-xs uppercase tracking-[0.25em] text-accent">Servizi</p>
+        <h2 className="font-serif text-4xl">Tutto quello che serve, niente di superfluo.</h2>
+        <div className="mt-12 grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-6">
+          {servizi.map((s) => (
+            <div key={s.label} className="flex flex-col items-start gap-3">
+              <s.icon className="h-6 w-6 text-primary" strokeWidth={1.5} />
+              <span className="text-sm">{s.label}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* DOVE SIAMO */}
+      <section className="bg-secondary/30 py-20">
+        <div className="mx-auto grid max-w-6xl gap-12 px-4 md:grid-cols-2 md:px-6">
+          <div>
+            <p className="mb-3 flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-accent">
+              <MapPin className="h-4 w-4" /> Dove siamo
+            </p>
+            <h2 className="font-serif text-4xl">Nel cuore del basso Salento.</h2>
+            <p className="mt-5 text-muted-foreground">
+              A pochi minuti dal mare di Tricase Porto e Marina Serra, tra Castro e le spiagge di
+              sabbia di Pescoluse e Torre Vado.
+            </p>
+            <ul className="mt-8 divide-y divide-border">
+              {distanze.map((d) => (
+                <li key={d.luogo} className="flex items-center justify-between py-3 text-sm">
+                  <span>{d.luogo}</span>
+                  <span className="text-muted-foreground">{d.km}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <PhotoPlaceholder label="Mappa · posizione della struttura" ratio="square" />
+        </div>
+      </section>
+
+      {/* RECENSIONI */}
+      <section className="mx-auto max-w-4xl px-4 py-20 text-center md:px-6">
+        <p className="mb-3 text-xs uppercase tracking-[0.25em] text-accent">Recensioni</p>
+        <h2 className="font-serif text-4xl">Lo spazio delle voci dei nostri ospiti.</h2>
+        <p className="mt-5 text-muted-foreground">
+          Le recensioni verranno pubblicate qui non appena disponibili.
+        </p>
+      </section>
+
+      {/* CTA */}
+      <section className="mx-auto mb-20 max-w-5xl px-4 md:px-6">
+        <div className="rounded-2xl bg-primary px-8 py-14 text-center text-primary-foreground">
+          <h2 className="font-serif text-4xl">Vieni a scoprire il Salento con noi.</h2>
+          <p className="mx-auto mt-4 max-w-lg opacity-90">
+            Verifica la disponibilità e prenota il tuo soggiorno.
+          </p>
+          <a
+            href="#"
+            className="mt-8 inline-block rounded-full bg-background px-8 py-3 text-sm font-medium uppercase tracking-widest text-primary hover:opacity-90"
+          >
+            Prenota su Booking.com
+          </a>
+        </div>
+      </section>
+    </>
   );
 }
