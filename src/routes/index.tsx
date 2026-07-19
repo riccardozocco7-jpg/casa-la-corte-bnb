@@ -51,8 +51,7 @@ function Home() {
               Una dimora storica, un accoglienza di famiglia.
             </h1>
             <p className="mt-6 max-w-md text-lg text-muted-foreground">
-              Tre alloggi curati, ospitalità autentica e uno sguardo attento alla
-              sostenibilità. Il Salento come lo vive chi ci è cresciuto.
+              Le sue pietre raccontano una delle prime case di Tricase. Oggi, Corte degli Angeli le fa rivivere con la stessa autenticità di sempre.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
