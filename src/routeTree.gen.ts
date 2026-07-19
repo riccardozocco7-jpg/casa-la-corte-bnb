@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as StrutturaRouteImport } from './routes/struttura'
+import { Route as RecensioniRouteImport } from './routes/recensioni'
 import { Route as DintorniRouteImport } from './routes/dintorni'
 import { Route as ContattiRouteImport } from './routes/contatti'
 import { Route as AlloggiRouteImport } from './routes/alloggi'
@@ -19,6 +20,11 @@ import { Route as AlloggiSlugRouteImport } from './routes/alloggi.$slug'
 const StrutturaRoute = StrutturaRouteImport.update({
   id: '/struttura',
   path: '/struttura',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RecensioniRoute = RecensioniRouteImport.update({
+  id: '/recensioni',
+  path: '/recensioni',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DintorniRoute = DintorniRouteImport.update({
@@ -52,6 +58,7 @@ export interface FileRoutesByFullPath {
   '/alloggi': typeof AlloggiRouteWithChildren
   '/contatti': typeof ContattiRoute
   '/dintorni': typeof DintorniRoute
+  '/recensioni': typeof RecensioniRoute
   '/struttura': typeof StrutturaRoute
   '/alloggi/$slug': typeof AlloggiSlugRoute
 }
@@ -60,6 +67,7 @@ export interface FileRoutesByTo {
   '/alloggi': typeof AlloggiRouteWithChildren
   '/contatti': typeof ContattiRoute
   '/dintorni': typeof DintorniRoute
+  '/recensioni': typeof RecensioniRoute
   '/struttura': typeof StrutturaRoute
   '/alloggi/$slug': typeof AlloggiSlugRoute
 }
@@ -69,6 +77,7 @@ export interface FileRoutesById {
   '/alloggi': typeof AlloggiRouteWithChildren
   '/contatti': typeof ContattiRoute
   '/dintorni': typeof DintorniRoute
+  '/recensioni': typeof RecensioniRoute
   '/struttura': typeof StrutturaRoute
   '/alloggi/$slug': typeof AlloggiSlugRoute
 }
@@ -79,6 +88,7 @@ export interface FileRouteTypes {
     | '/alloggi'
     | '/contatti'
     | '/dintorni'
+    | '/recensioni'
     | '/struttura'
     | '/alloggi/$slug'
   fileRoutesByTo: FileRoutesByTo
@@ -87,6 +97,7 @@ export interface FileRouteTypes {
     | '/alloggi'
     | '/contatti'
     | '/dintorni'
+    | '/recensioni'
     | '/struttura'
     | '/alloggi/$slug'
   id:
@@ -95,6 +106,7 @@ export interface FileRouteTypes {
     | '/alloggi'
     | '/contatti'
     | '/dintorni'
+    | '/recensioni'
     | '/struttura'
     | '/alloggi/$slug'
   fileRoutesById: FileRoutesById
@@ -104,6 +116,7 @@ export interface RootRouteChildren {
   AlloggiRoute: typeof AlloggiRouteWithChildren
   ContattiRoute: typeof ContattiRoute
   DintorniRoute: typeof DintorniRoute
+  RecensioniRoute: typeof RecensioniRoute
   StrutturaRoute: typeof StrutturaRoute
 }
 
@@ -114,6 +127,13 @@ declare module '@tanstack/react-router' {
       path: '/struttura'
       fullPath: '/struttura'
       preLoaderRoute: typeof StrutturaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/recensioni': {
+      id: '/recensioni'
+      path: '/recensioni'
+      fullPath: '/recensioni'
+      preLoaderRoute: typeof RecensioniRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/dintorni': {
@@ -170,18 +190,9 @@ const rootRouteChildren: RootRouteChildren = {
   AlloggiRoute: AlloggiRouteWithChildren,
   ContattiRoute: ContattiRoute,
   DintorniRoute: DintorniRoute,
+  RecensioniRoute: RecensioniRoute,
   StrutturaRoute: StrutturaRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

@@ -1,5 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PhotoPlaceholder } from "../components/PhotoPlaceholder";
+import { ReviewCard } from "../components/ReviewCard";
+import { recensioni } from "../data/recensioni";
 import {
   Wifi,
   Car,
