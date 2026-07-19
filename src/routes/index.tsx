@@ -18,7 +18,7 @@ export const Route = createFileRoute("/")({
 });
 
 const alloggi = [
-  { slug: "riccardo", nome: "Riccardo", desc: "Bifocale." },
+  { slug: "riccardo", nome: "Riccardo", desc: "Bilocale." },
   { slug: "andrea", nome: "Andrea", desc: "Stanza sopra con affaccio al campanile della chiesa." },
   { slug: "giorgio", nome: "Giorgio", desc: "Monolocale, spazioso e accogliente." },
 ] as const;
@@ -173,7 +173,7 @@ function Home() {
               <p className="mb-3 text-xs uppercase tracking-[0.25em] text-accent">Recensioni</p>
               <h2 className="font-serif text-4xl md:text-5xl">Ospiti che tornano a raccontarlo.</h2>
               <p className="mt-4 max-w-xl text-muted-foreground">
-                Cinque stelle, storie vere. Scorri le voci di chi ha soggiornato a Corte degli Angeli.
+                Alcune delle voci di chi ha soggiornato a Corte degli Angeli.
               </p>
             </div>
             <Link
