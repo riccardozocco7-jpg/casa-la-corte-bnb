@@ -127,7 +127,7 @@ function Home() {
       {/* SERVIZI */}
       <section className="mx-auto max-w-6xl px-4 py-20 md:px-6">
         <p className="mb-3 text-xs uppercase tracking-[0.25em] text-accent">Servizi</p>
-        <h2 className="font-serif text-4xl">Tutto quello che serve, niente di superfluo.</h2>
+        <h2 className="font-serif text-4xl">Tutti i servizi inclusi.</h2>
         <div className="mt-12 grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-6">
           {servizi.map((s) => (
             <div key={s.label} className="flex flex-col items-start gap-3">
