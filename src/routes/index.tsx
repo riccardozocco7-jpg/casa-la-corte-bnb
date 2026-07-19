@@ -85,7 +85,7 @@ function Home() {
             <p className="mb-3 text-xs uppercase tracking-[0.25em] text-accent">La nostra storia</p>
             <h2 className="font-serif text-4xl">Una casa che accoglie da tre generazioni.</h2>
             <p className="mt-5 text-muted-foreground">
-              Marcello, Rosaria e la famiglia hanno trasformato la casa di sempre in un piccolo B&amp;B a
+              Marcello e Maria Rosaria e la famiglia hanno trasformato questa struttura in un piccolo B&amp;B a
               conduzione familiare. Materiali naturali, energia rinnovabile, prodotti a chilometro
               zero: crediamo che l'ospitalità migliore sia quella che rispetta il luogo che la ospita.
             </p>
