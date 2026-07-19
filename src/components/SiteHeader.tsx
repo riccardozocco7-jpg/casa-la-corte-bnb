@@ -7,6 +7,7 @@ const navItems = [
   { to: "/struttura", label: "La struttura" },
   { to: "/alloggi", label: "Alloggi" },
   { to: "/dintorni", label: "Dintorni" },
+  { to: "/recensioni", label: "Recensioni" },
   { to: "/contatti", label: "Contatti" },
 ] as const;
 
