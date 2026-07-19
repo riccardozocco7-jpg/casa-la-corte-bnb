@@ -166,13 +166,37 @@ function Home() {
       </section>
 
       {/* RECENSIONI */}
-      <section className="mx-auto max-w-4xl px-4 py-20 text-center md:px-6">
-        <p className="mb-3 text-xs uppercase tracking-[0.25em] text-accent">Recensioni</p>
-        <h2 className="font-serif text-4xl">Lo spazio delle voci dei nostri ospiti.</h2>
-        <p className="mt-5 text-muted-foreground">
-          Le recensioni verranno pubblicate qui non appena disponibili.
-        </p>
+      <section className="border-y border-border/60 bg-secondary/40 py-24">
+        <div className="mx-auto max-w-6xl px-4 md:px-6">
+          <div className="flex flex-wrap items-end justify-between gap-6">
+            <div>
+              <p className="mb-3 text-xs uppercase tracking-[0.25em] text-accent">Recensioni</p>
+              <h2 className="font-serif text-4xl md:text-5xl">Ospiti che tornano a raccontarlo.</h2>
+              <p className="mt-4 max-w-xl text-muted-foreground">
+                Cinque stelle, storie vere. Scorri le voci di chi ha soggiornato a Corte degli Angeli.
+              </p>
+            </div>
+            <Link
+              to="/recensioni"
+              className="text-sm uppercase tracking-widest text-primary hover:opacity-70"
+            >
+              Vedi tutte →
+            </Link>
+          </div>
+
+          <div className="mt-12 -mx-4 flex snap-x snap-mandatory gap-6 overflow-x-auto px-4 pb-6 md:-mx-6 md:px-6 [scrollbar-width:thin]">
+            {recensioni.map((r) => (
+              <div
+                key={r.autore}
+                className="w-[85%] flex-shrink-0 snap-start sm:w-[420px]"
+              >
+                <ReviewCard r={r} />
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
+
 
       {/* CTA */}
       <section className="mx-auto mb-20 max-w-5xl px-4 md:px-6">
