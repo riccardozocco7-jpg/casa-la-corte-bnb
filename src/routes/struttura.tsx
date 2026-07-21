@@ -52,7 +52,6 @@ function Struttura() {
           {[
             { icon: Leaf, title: "Materiali naturali", body: "Pietra locale, calce, legno. Nessuna finitura sintetica negli ambienti." },
             { icon: Home, title: "Energia rinnovabile", body: "Pannelli fotovoltaici e solare termico coprono buona parte dei consumi." },
-            { icon: Users, title: "Filiera corta", body: "Colazione con prodotti dei contadini della zona e olio di famiglia." },
           ].map((v) => (
             <div key={v.title} className="rounded-lg border border-border bg-card p-6">
               <v.icon className="h-6 w-6 text-primary" strokeWidth={1.5} />
