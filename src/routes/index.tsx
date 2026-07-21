@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PhotoPlaceholder } from "../components/PhotoPlaceholder";
+import { MapEmbed } from "../components/MapEmbed";
 import { ReviewCard } from "../components/ReviewCard";
 import { recensioni } from "../data/recensioni";
 import {
@@ -161,7 +162,7 @@ function Home() {
               ))}
             </ul>
           </div>
-          <PhotoPlaceholder label="Mappa · posizione della struttura" ratio="square" />
+          <MapEmbed className="aspect-square" />
         </div>
       </section>
 
