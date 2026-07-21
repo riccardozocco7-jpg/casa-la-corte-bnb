@@ -3,12 +3,12 @@ import { PhotoPlaceholder } from "../components/PhotoPlaceholder";
 import { ReviewCard } from "../components/ReviewCard";
 import { recensioni } from "../data/recensioni";
 import {
+  UtensilsCrossed,
   Wifi,
-  Car,
-  Coffee,
-  Bus,
-  Snowflake,
-  Trees,
+  CircleParking,
+  Dog,
+  WashingMachine,
+  Wind,
   MapPin,
   ArrowRight,
 } from "lucide-react";
