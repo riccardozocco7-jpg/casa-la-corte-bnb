@@ -6,7 +6,7 @@ export function SiteFooter() {
     <footer className="mt-24 border-t border-border/60 bg-secondary/40">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 md:grid-cols-4 md:px-6">
         <div>
-          <div className="font-serif text-2xl">B&amp;B Marcello</div>
+          <div className="font-serif text-2xl">Corte degli Angeli</div>
           <p className="mt-3 text-sm text-muted-foreground">
             Un rifugio di famiglia nel cuore del Salento, tra ulivi e mare.
           </p>
@@ -25,8 +25,8 @@ export function SiteFooter() {
         <div>
           <h4 className="mb-3 text-xs uppercase tracking-widest text-foreground/60">Contatti</h4>
           <ul className="space-y-2 text-sm text-muted-foreground">
-            <li className="flex items-center gap-2"><Phone className="h-4 w-4" /> +39 · da inserire</li>
-            <li className="flex items-center gap-2"><Mail className="h-4 w-4" /> email · da inserire</li>
+            <li className="flex items-center gap-2"><Phone className="h-4 w-4" /> +39 · 3209717096</li>
+            <li className="flex items-center gap-2"><Mail className="h-4 w-4" /> email · marcellozocco2@gmail.com</li>
           </ul>
         </div>
 
