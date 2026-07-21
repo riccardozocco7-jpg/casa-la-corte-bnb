@@ -43,7 +43,7 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="border-t border-border/60 py-5 text-center text-xs text-muted-foreground">
-        © {new Date().getFullYear()} B&amp;B Marcello · Tricase, Salento
+        © {new Date().getFullYear()} Corte degli Angeli · Tricase, Salento
       </div>
     </footer>
   );
