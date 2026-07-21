@@ -19,7 +19,9 @@ export function SiteHeader() {
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/85 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 md:px-6">
         <Link to="/" className="flex items-center gap-2 font-serif text-xl tracking-tight">
-          <span className="inline-block h-8 w-8 rounded-full border border-primary/60" aria-hidden />
+          <span className="flex h-8 w-8 items-center justify-center rounded-full border border-primary/60 font-serif text-base font-medium text-primary" aria-hidden>
+            C
+          </span>
           <span>Corte degli Angeli</span>
         </Link>
 
