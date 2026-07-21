@@ -24,12 +24,12 @@ const alloggi = [
 ] as const;
 
 const servizi = [
-  { icon: Car, label: "Parcheggio privato" },
-  { icon: Wifi, label: "Wi-Fi gratuito" },
-  { icon: Coffee, label: "Colazione fatta in casa" },
-  { icon: Bus, label: "Navetta su richiesta" },
-  { icon: Snowflake, label: "Aria condizionata" },
-  { icon: Trees, label: "Giardino con ulivi" },
+  { icon: UtensilsCrossed, label: "Cucina" },
+  { icon: Wifi, label: "Wifi" },
+  { icon: CircleParking, label: "Parcheggio gratuito in strada" },
+  { icon: Dog, label: "Animali domestici ammessi" },
+  { icon: WashingMachine, label: "Lavatrice Gratis (nell'edificio)" },
+  { icon: Wind, label: "Sistema di aria condizionata a split" },
 ];
 
 const distanze = [
