@@ -3,12 +3,12 @@ import { PhotoPlaceholder } from "../components/PhotoPlaceholder";
 import { ReviewCard } from "../components/ReviewCard";
 import { recensioni } from "../data/recensioni";
 import {
+  UtensilsCrossed,
   Wifi,
-  Car,
-  Coffee,
-  Bus,
-  Snowflake,
-  Trees,
+  CircleParking,
+  Dog,
+  WashingMachine,
+  Wind,
   MapPin,
   ArrowRight,
 } from "lucide-react";
@@ -24,12 +24,12 @@ const alloggi = [
 ] as const;
 
 const servizi = [
-  { icon: Car, label: "Parcheggio privato" },
-  { icon: Wifi, label: "Wi-Fi gratuito" },
-  { icon: Coffee, label: "Colazione fatta in casa" },
-  { icon: Bus, label: "Navetta su richiesta" },
-  { icon: Snowflake, label: "Aria condizionata" },
-  { icon: Trees, label: "Giardino con ulivi" },
+  { icon: UtensilsCrossed, label: "Cucina" },
+  { icon: Wifi, label: "Wifi" },
+  { icon: CircleParking, label: "Parcheggio gratuito in strada" },
+  { icon: Dog, label: "Animali domestici ammessi" },
+  { icon: WashingMachine, label: "Lavatrice Gratis (nell'edificio)" },
+  { icon: Wind, label: "Sistema di aria condizionata a split" },
 ];
 
 const distanze = [
@@ -129,7 +129,7 @@ function Home() {
       {/* SERVIZI */}
       <section className="mx-auto max-w-6xl px-4 py-20 md:px-6">
         <p className="mb-3 text-xs uppercase tracking-[0.25em] text-accent">Servizi</p>
-        <h2 className="font-serif text-4xl">Tutti i servizi inclusi.</h2>
+        <h2 className="font-serif text-4xl">Cosa troverai.</h2>
         <div className="mt-12 grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-6">
           {servizi.map((s) => (
             <div key={s.label} className="flex flex-col items-start gap-3">
