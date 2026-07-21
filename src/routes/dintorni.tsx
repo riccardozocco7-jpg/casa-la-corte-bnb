@@ -4,9 +4,9 @@ import { PhotoPlaceholder } from "../components/PhotoPlaceholder";
 export const Route = createFileRoute("/dintorni")({
   head: () => ({
     meta: [
-      { title: "Dintorni — B&B Marcello" },
-      { name: "description", content: "Mare, borghi e Castro: cosa vedere nei dintorni del B&B Marcello nel Salento." },
-      { property: "og:title", content: "Dintorni — B&B Marcello" },
+      { title: "Dintorni — Corte degli Angeli" },
+      { name: "description", content: "Mare, borghi e Castro: cosa vedere nei dintorni di Corte degli Angeli nel Salento." },
+      { property: "og:title", content: "Dintorni — Corte degli Angeli" },
       { property: "og:description", content: "Mare del Salento, borghi vicini e Castro." },
     ],
   }),
@@ -16,7 +16,7 @@ export const Route = createFileRoute("/dintorni")({
 const luoghi = [
   {
     nome: "Tricase Porto",
-    body: "Un piccolo porto naturale a cinque minuti di auto. Sole al mattino, tramonto sulla scogliera.",
+    body: "Un piccolo porto a cinque minuti di auto. ",
   },
   {
     nome: "Marina Serra",
@@ -46,8 +46,7 @@ function Dintorni() {
       <p className="mb-3 text-xs uppercase tracking-[0.25em] text-primary">Dintorni</p>
       <h1 className="font-serif text-5xl">Il Salento intorno a noi.</h1>
       <p className="mt-5 max-w-xl text-muted-foreground">
-        Mare, borghi di pietra bianca, tavolate all'ombra. Alcuni dei luoghi che consigliamo di
-        raggiungere in giornata partendo dal B&amp;B.
+        Alcuni dei luoghi che consigliamo di raggiungere in giornata partendo da Corte Degli Angeli.
       </p>
 
       <div className="mt-14 grid gap-10 md:grid-cols-2">
