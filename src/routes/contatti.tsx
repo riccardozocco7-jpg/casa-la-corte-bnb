@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { PhotoPlaceholder } from "../components/PhotoPlaceholder";
+import { MapEmbed } from "../components/MapEmbed";
 import { Phone, MessageCircle, Mail, MapPin } from "lucide-react";
 import { useState } from "react";
 
@@ -90,24 +90,24 @@ function Contatti() {
           <ul className="mt-6 space-y-4 text-sm">
             <li className="flex items-center gap-3">
               <Phone className="h-4 w-4 text-primary" />
-              <a href="tel:+39" className="hover:text-primary">+39 · numero da inserire</a>
+              <a href="tel:+393209717096" className="hover:text-primary">+39 320 971 7096</a>
             </li>
             <li className="flex items-center gap-3">
               <MessageCircle className="h-4 w-4 text-primary" />
-              <a href="https://wa.me/39" className="hover:text-primary">WhatsApp — numero da inserire</a>
+              <a href="https://wa.me/393209717096" className="hover:text-primary">Scrivici su WhatsApp</a>
             </li>
             <li className="flex items-center gap-3">
               <Mail className="h-4 w-4 text-primary" />
-              <a href="mailto:" className="hover:text-primary">email da inserire</a>
+              <a href="mailto:marcellozocco2@gmail.com" className="hover:text-primary">marcellozocco2@gmail.com</a>
             </li>
             <li className="flex items-start gap-3">
               <MapPin className="h-4 w-4 text-primary mt-1" />
-              <span>Indirizzo da inserire<br />Tricase (LE), Salento</span>
+              <span>Via Cittadella 23<br />Tricase (LE), Salento</span>
             </li>
           </ul>
 
           <div className="mt-8">
-            <PhotoPlaceholder label="Mappa · posizione della struttura" ratio="landscape" />
+            <MapEmbed className="aspect-[4/3]" />
           </div>
         </div>
       </div>
