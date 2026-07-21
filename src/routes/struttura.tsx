@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PhotoPlaceholder } from "../components/PhotoPlaceholder";
-import { Leaf, Users, Home } from "lucide-react";
+import { Leaf, Home } from "lucide-react";
 
 export const Route = createFileRoute("/struttura")({
   head: () => ({
