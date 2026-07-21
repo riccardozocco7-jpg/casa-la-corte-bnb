@@ -18,9 +18,12 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/85 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 md:px-6">
-        <Link to="/" className="flex items-center gap-2 font-serif text-xl tracking-tight">
-          <span className="flex h-8 w-8 items-center justify-center rounded-full border border-primary/60 font-serif text-base font-medium text-primary" aria-hidden>
-            C
+        <Link to="/" className="flex items-center gap-2.5 font-serif text-xl tracking-tight">
+          <span className="relative flex h-8 w-8 items-center justify-center rounded-full border border-primary/50 font-serif text-base font-light text-primary" aria-hidden>
+            <span className="absolute inset-[3px] rounded-full border border-primary/30" />
+            <span className="absolute inset-[5px] rounded-full border border-primary/20" />
+            <span className="relative -translate-y-px">C</span>
+            <span className="absolute bottom-1.5 h-0.5 w-0.5 rounded-full bg-primary/70" />
           </span>
           <span>Corte degli Angeli</span>
         </Link>
