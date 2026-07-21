@@ -4,9 +4,9 @@ import { PhotoPlaceholder } from "../components/PhotoPlaceholder";
 export const Route = createFileRoute("/alloggi")({
   head: () => ({
     meta: [
-      { title: "Alloggi — B&B Marcello" },
+      { title: "Alloggi — Corte degli Angeli" },
       { name: "description", content: "Tre alloggi curati: Riccardo, Andrea e Giorgio. Scopri la stanza giusta per te." },
-      { property: "og:title", content: "Alloggi — B&B Marcello" },
+      { property: "og:title", content: "Alloggi — Corte degli Angeli" },
       { property: "og:description", content: "Tre alloggi a conduzione familiare nel Salento." },
     ],
   }),
@@ -14,9 +14,9 @@ export const Route = createFileRoute("/alloggi")({
 });
 
 const alloggi = [
-  { slug: "riccardo", nome: "Riccardo", desc: "Matrimoniale con vista sugli ulivi.", capacity: "2 ospiti" },
-  { slug: "andrea", nome: "Andrea", desc: "Suite luminosa, quieta e riservata.", capacity: "2 ospiti" },
-  { slug: "giorgio", nome: "Giorgio", desc: "Camera famigliare spaziosa.", capacity: "3-4 ospiti" },
+  { slug: "riccardo", nome: "Riccardo", desc: "Bilocale.", capacity: "2 ospiti" },
+  { slug: "andrea", nome: "Andrea", desc: "Stanza di sopra, con vista sul campanile.", capacity: "2 ospiti" },
+  { slug: "giorgio", nome: "Giorgio", desc: "Monolocale.", capacity: "3-4 ospiti" },
 ] as const;
 
 function AlloggiLayout() {
