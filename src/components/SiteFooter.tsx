@@ -8,7 +8,7 @@ export function SiteFooter() {
         <div>
           <div className="font-serif text-2xl">Corte degli Angeli</div>
           <p className="mt-3 text-sm text-muted-foreground">
-            Un rifugio di famiglia nel cuore del Salento, tra ulivi e mare.
+            Un rifugio di famiglia nel cuore del Salento.
           </p>
         </div>
 
