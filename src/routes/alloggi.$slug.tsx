@@ -4,12 +4,34 @@ import { Bed, Users, Bath, Ruler, ArrowLeft } from "lucide-react";
 import riccardoImg from "../assets/riccardo.jpeg.asset.json";
 import andreaImg from "../assets/andrea.png.asset.json";
 import giorgioImg from "../assets/giorgio.jpeg.asset.json";
+import riccardoCamera from "../assets/riccardo/camera.jpeg.asset.json";
+import riccardoCucina from "../assets/riccardo/cucina.jpeg.asset.json";
+import riccardoIngresso from "../assets/riccardo/ingresso.jpeg.asset.json";
+import riccardoBagno from "../assets/riccardo/bagno.jpeg.asset.json";
+import riccardoTeiera from "../assets/riccardo/teiera.jpeg.asset.json";
+import riccardoNicchia from "../assets/riccardo/nicchia.jpeg.asset.json";
+import riccardoAsciugamano from "../assets/riccardo/asciugamano.jpeg.asset.json";
+import riccardoDettaglio from "../assets/riccardo/dettaglio.jpeg.asset.json";
 
 const heroImages: Record<string, string> = {
   riccardo: riccardoImg.url,
   andrea: andreaImg.url,
   giorgio: giorgioImg.url,
 };
+
+const galleries: Record<string, { url: string; alt: string }[]> = {
+  riccardo: [
+    { url: riccardoCamera.url, alt: "Camera con volta a botte in pietra" },
+    { url: riccardoCucina.url, alt: "Cucina con tavolo e sedie" },
+    { url: riccardoIngresso.url, alt: "Ingresso con arco in pietra" },
+    { url: riccardoBagno.url, alt: "Bagno con lavabo d'appoggio" },
+    { url: riccardoNicchia.url, alt: "Nicchia con dipinto sacro" },
+    { url: riccardoDettaglio.url, alt: "Dettaglio arredo con scala e cappello" },
+    { url: riccardoTeiera.url, alt: "Servizio da tè sul letto" },
+    { url: riccardoAsciugamano.url, alt: "Asciugamano con merletto" },
+  ],
+};
+
 
 type Alloggio = {
   nome: string;
@@ -84,6 +106,7 @@ function AlloggioPage() {
   const { alloggio } = Route.useLoaderData();
   const { slug } = Route.useParams();
   const hero = heroImages[slug];
+  const gallery = galleries[slug];
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-12 md:px-6 md:py-16">
@@ -98,19 +121,32 @@ function AlloggioPage() {
       </div>
 
       {/* Gallery */}
-      <div className="mt-10 grid gap-3 md:grid-cols-4">
-        {hero ? (
+      {gallery ? (
+        <div className="mt-10 grid gap-3 md:grid-cols-4">
           <div className="md:col-span-2 md:row-span-2 aspect-[4/3] md:aspect-auto overflow-hidden rounded-md bg-muted">
-            <img src={hero} alt={`${alloggio.nome} · principale`} className="h-full w-full object-cover" />
+            <img src={gallery[0].url} alt={gallery[0].alt} className="h-full w-full object-cover" loading="eager" />
           </div>
-        ) : (
-          <PhotoPlaceholder label={`${alloggio.nome} · principale`} ratio="landscape" className="md:col-span-2 md:row-span-2" />
-        )}
-        <PhotoPlaceholder label="Dettaglio letto" ratio="square" />
-        <PhotoPlaceholder label="Bagno" ratio="square" />
-        <PhotoPlaceholder label="Vista finestra" ratio="square" />
-        <PhotoPlaceholder label="Dettaglio arredo" ratio="square" />
-      </div>
+          {gallery.slice(1).map((img) => (
+            <div key={img.url} className="aspect-square overflow-hidden rounded-md bg-muted">
+              <img src={img.url} alt={img.alt} className="h-full w-full object-cover" loading="lazy" />
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div className="mt-10 grid gap-3 md:grid-cols-4">
+          {hero ? (
+            <div className="md:col-span-2 md:row-span-2 aspect-[4/3] md:aspect-auto overflow-hidden rounded-md bg-muted">
+              <img src={hero} alt={`${alloggio.nome} · principale`} className="h-full w-full object-cover" />
+            </div>
+          ) : (
+            <PhotoPlaceholder label={`${alloggio.nome} · principale`} ratio="landscape" className="md:col-span-2 md:row-span-2" />
+          )}
+          <PhotoPlaceholder label="Dettaglio letto" ratio="square" />
+          <PhotoPlaceholder label="Bagno" ratio="square" />
+          <PhotoPlaceholder label="Vista finestra" ratio="square" />
+          <PhotoPlaceholder label="Dettaglio arredo" ratio="square" />
+        </div>
+      )}
 
       <div className="mt-14 grid gap-12 md:grid-cols-3">
         <div className="md:col-span-2">
