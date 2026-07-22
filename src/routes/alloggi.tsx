@@ -38,7 +38,9 @@ function AlloggiLayout() {
       <div className="mt-14 grid gap-10 md:grid-cols-3">
         {alloggi.map((a) => (
           <Link key={a.slug} to="/alloggi/$slug" params={{ slug: a.slug }} className="group">
-            <PhotoPlaceholder label={`Camera ${a.nome}`} ratio="portrait" />
+            <div className="aspect-[3/4] overflow-hidden rounded-md bg-muted">
+              <img src={a.img} alt={`Camera ${a.nome}`} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+            </div>
             <div className="mt-4 flex items-baseline justify-between">
               <h2 className="font-serif text-2xl group-hover:text-primary">{a.nome}</h2>
               <span className="text-xs uppercase tracking-widest text-muted-foreground">{a.capacity}</span>
