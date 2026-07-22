@@ -1,6 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PhotoPlaceholder } from "../components/PhotoPlaceholder";
 import corteIngressoHero from "../assets/corte-ingresso-hero.jpg.asset.json";
+import riccardoImg from "../assets/riccardo.jpeg.asset.json";
+import andreaImg from "../assets/andrea.png.asset.json";
+import giorgioImg from "../assets/giorgio.jpeg.asset.json";
 import { MapEmbed } from "../components/MapEmbed";
 import { ReviewCard } from "../components/ReviewCard";
 import { recensioni } from "../data/recensioni";
@@ -20,9 +23,9 @@ export const Route = createFileRoute("/")({
 });
 
 const alloggi = [
-  { slug: "riccardo", nome: "Riccardo", desc: "Bilocale." },
-  { slug: "andrea", nome: "Andrea", desc: "Stanza sopra con affaccio al campanile della chiesa." },
-  { slug: "giorgio", nome: "Giorgio", desc: "Monolocale, spazioso e accogliente." },
+  { slug: "riccardo", nome: "Riccardo", desc: "Bilocale.", img: riccardoImg.url },
+  { slug: "andrea", nome: "Andrea", desc: "Stanza sopra con affaccio al campanile della chiesa.", img: andreaImg.url },
+  { slug: "giorgio", nome: "Giorgio", desc: "Monolocale, spazioso e accogliente.", img: giorgioImg.url },
 ] as const;
 
 const servizi = [
@@ -127,7 +130,15 @@ function Home() {
           <div className="grid gap-8 md:grid-cols-3">
             {alloggi.map((a) => (
               <Link key={a.slug} to="/alloggi/$slug" params={{ slug: a.slug }} className="group">
-                <PhotoPlaceholder label={`Camera ${a.nome}`} ratio="portrait" />
+                <div className="aspect-[3/4] overflow-hidden rounded-md">
+                  <img
+                    src={a.img}
+                    alt={`Camera ${a.nome}`}
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
                 <h3 className="mt-4 font-serif text-2xl group-hover:text-primary">{a.nome}</h3>
                 <p className="mt-1 text-sm text-muted-foreground">{a.desc}</p>
               </Link>
