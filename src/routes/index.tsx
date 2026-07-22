@@ -130,7 +130,15 @@ function Home() {
           <div className="grid gap-8 md:grid-cols-3">
             {alloggi.map((a) => (
               <Link key={a.slug} to="/alloggi/$slug" params={{ slug: a.slug }} className="group">
-                <PhotoPlaceholder label={`Camera ${a.nome}`} ratio="portrait" />
+                <div className="aspect-[3/4] overflow-hidden rounded-md">
+                  <img
+                    src={a.img}
+                    alt={`Camera ${a.nome}`}
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
                 <h3 className="mt-4 font-serif text-2xl group-hover:text-primary">{a.nome}</h3>
                 <p className="mt-1 text-sm text-muted-foreground">{a.desc}</p>
               </Link>
