@@ -24,8 +24,8 @@ export const Route = createFileRoute("/")({
 
 const alloggi = [
   { slug: "riccardo", nome: "Riccardo", desc: "Bilocale.", img: riccardoImg.url },
-  { slug: "andrea", nome: "Andrea", desc: "Stanza sopra con affaccio al campanile della chiesa.", img: andreaImg.url },
-  { slug: "giorgio", nome: "Giorgio", desc: "Monolocale, spazioso e accogliente.", img: giorgioImg.url },
+  { slug: "andrea", nome: "Andrea", desc: "Monolocale.", img: andreaImg.url },
+  { slug: "giorgio", nome: "Giorgio", desc: "Stanza sopra con affaccio al campanile della chiesa.", img: giorgioImg.url },
 ] as const;
 
 const servizi = [
