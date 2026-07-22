@@ -1,6 +1,15 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { PhotoPlaceholder } from "../components/PhotoPlaceholder";
 import { Bed, Users, Bath, Ruler, ArrowLeft } from "lucide-react";
+import riccardoImg from "../assets/riccardo.jpeg.asset.json";
+import andreaImg from "../assets/andrea.png.asset.json";
+import giorgioImg from "../assets/giorgio.jpeg.asset.json";
+
+const heroImages: Record<string, string> = {
+  riccardo: riccardoImg.url,
+  andrea: andreaImg.url,
+  giorgio: giorgioImg.url,
+};
 
 type Alloggio = {
   nome: string;
@@ -73,6 +82,8 @@ export const Route = createFileRoute("/alloggi/$slug")({
 
 function AlloggioPage() {
   const { alloggio } = Route.useLoaderData();
+  const { slug } = Route.useParams();
+  const hero = heroImages[slug];
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-12 md:px-6 md:py-16">
@@ -88,7 +99,13 @@ function AlloggioPage() {
 
       {/* Gallery */}
       <div className="mt-10 grid gap-3 md:grid-cols-4">
-        <PhotoPlaceholder label={`${alloggio.nome} · principale`} ratio="landscape" className="md:col-span-2 md:row-span-2" />
+        {hero ? (
+          <div className="md:col-span-2 md:row-span-2 aspect-[4/3] md:aspect-auto overflow-hidden rounded-md bg-muted">
+            <img src={hero} alt={`${alloggio.nome} · principale`} className="h-full w-full object-cover" />
+          </div>
+        ) : (
+          <PhotoPlaceholder label={`${alloggio.nome} · principale`} ratio="landscape" className="md:col-span-2 md:row-span-2" />
+        )}
         <PhotoPlaceholder label="Dettaglio letto" ratio="square" />
         <PhotoPlaceholder label="Bagno" ratio="square" />
         <PhotoPlaceholder label="Vista finestra" ratio="square" />
