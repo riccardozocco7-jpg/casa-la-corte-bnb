@@ -1,6 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PhotoPlaceholder } from "../components/PhotoPlaceholder";
 import corteIngressoHero from "../assets/corte-ingresso-hero.jpg.asset.json";
+import riccardoImg from "../assets/riccardo.jpeg.asset.json";
+import andreaImg from "../assets/andrea.png.asset.json";
+import giorgioImg from "../assets/giorgio.jpeg.asset.json";
 import { MapEmbed } from "../components/MapEmbed";
 import { ReviewCard } from "../components/ReviewCard";
 import { recensioni } from "../data/recensioni";
