@@ -1,6 +1,15 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { PhotoPlaceholder } from "../components/PhotoPlaceholder";
 import { Bed, Users, Bath, Ruler, ArrowLeft } from "lucide-react";
+import riccardoImg from "../assets/riccardo.jpeg.asset.json";
+import andreaImg from "../assets/andrea.png.asset.json";
+import giorgioImg from "../assets/giorgio.jpeg.asset.json";
+
+const heroImages: Record<string, string> = {
+  riccardo: riccardoImg.url,
+  andrea: andreaImg.url,
+  giorgio: giorgioImg.url,
+};
 
 type Alloggio = {
   nome: string;
