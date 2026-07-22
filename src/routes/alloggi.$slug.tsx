@@ -82,6 +82,8 @@ export const Route = createFileRoute("/alloggi/$slug")({
 
 function AlloggioPage() {
   const { alloggio } = Route.useLoaderData();
+  const { slug } = Route.useParams();
+  const hero = heroImages[slug];
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-12 md:px-6 md:py-16">
