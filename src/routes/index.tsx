@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PhotoPlaceholder } from "../components/PhotoPlaceholder";
+import corteIngressoHero from "../assets/corte-ingresso-hero.jpg.asset.json";
 import { MapEmbed } from "../components/MapEmbed";
 import { ReviewCard } from "../components/ReviewCard";
 import { recensioni } from "../data/recensioni";
@@ -73,7 +74,15 @@ function Home() {
           </div>
 
           <div className="grid grid-cols-3 gap-2">
-            <PhotoPlaceholder label="Esterno · scatto principale" ratio="portrait" className="col-span-2 row-span-2" />
+            <div className="relative col-span-2 row-span-2 aspect-[3/4] overflow-hidden rounded-md">
+              <img
+                src={corteIngressoHero.url}
+                alt="Ingresso in pietra di Corte degli Angeli"
+                className="h-full w-full object-cover"
+                loading="eager"
+                decoding="async"
+              />
+            </div>
             <PhotoPlaceholder label="Dettaglio" ratio="square" />
             <PhotoPlaceholder label="Giardino" ratio="square" />
           </div>
