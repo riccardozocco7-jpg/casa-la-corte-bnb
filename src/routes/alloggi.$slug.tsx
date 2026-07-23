@@ -20,6 +20,15 @@ import andreaSpecchio from "../assets/andrea/specchio.png.asset.json";
 import andreaCucinaBagno from "../assets/andrea/cucina-bagno.png.asset.json";
 import andreaBagno from "../assets/andrea/bagno.png.asset.json";
 import andreaTestata from "../assets/andrea/testata.png.asset.json";
+import giorgioSoggiorno from "../assets/giorgio/soggiorno.png.asset.json";
+import giorgioCucina from "../assets/giorgio/cucina.jpeg.asset.json";
+import giorgioIngresso from "../assets/giorgio/ingresso.jpeg.asset.json";
+import giorgioBagno from "../assets/giorgio/bagno.jpeg.asset.json";
+import giorgioTerrazza from "../assets/giorgio/terrazza.jpeg.asset.json";
+import giorgioTerrazzaTavolo from "../assets/giorgio/terrazza-tavolo.jpeg.asset.json";
+import giorgioVista from "../assets/giorgio/vista.jpeg.asset.json";
+import giorgioTavoloEsterno from "../assets/giorgio/tavolo-esterno.jpeg.asset.json";
+import giorgioPianoCottura from "../assets/giorgio/piano-cottura.jpeg.asset.json";
 
 const heroImages: Record<string, string> = {
   riccardo: riccardoImg.url,
