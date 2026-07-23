@@ -20,6 +20,15 @@ import andreaSpecchio from "../assets/andrea/specchio.png.asset.json";
 import andreaCucinaBagno from "../assets/andrea/cucina-bagno.png.asset.json";
 import andreaBagno from "../assets/andrea/bagno.png.asset.json";
 import andreaTestata from "../assets/andrea/testata.png.asset.json";
+import giorgioSoggiorno from "../assets/giorgio/soggiorno.png.asset.json";
+import giorgioCucina from "../assets/giorgio/cucina.jpeg.asset.json";
+import giorgioIngresso from "../assets/giorgio/ingresso.jpeg.asset.json";
+import giorgioBagno from "../assets/giorgio/bagno.jpeg.asset.json";
+import giorgioTerrazza from "../assets/giorgio/terrazza.jpeg.asset.json";
+import giorgioTerrazzaTavolo from "../assets/giorgio/terrazza-tavolo.jpeg.asset.json";
+import giorgioVista from "../assets/giorgio/vista.jpeg.asset.json";
+import giorgioTavoloEsterno from "../assets/giorgio/tavolo-esterno.jpeg.asset.json";
+import giorgioPianoCottura from "../assets/giorgio/piano-cottura.jpeg.asset.json";
 
 const heroImages: Record<string, string> = {
   riccardo: riccardoImg.url,
@@ -47,6 +56,17 @@ const galleries: Record<string, { url: string; alt: string }[]> = {
     { url: andreaCucinaBagno.url, alt: "Cucina e accesso al bagno" },
     { url: andreaBagno.url, alt: "Bagno con doccia e lavabo d'appoggio" },
     { url: andreaTestata.url, alt: "Dettaglio testata e comodino" },
+  ],
+  giorgio: [
+    { url: giorgioSoggiorno.url, alt: "Zona pranzo con volta a botte e TV" },
+    { url: giorgioCucina.url, alt: "Cucina verde con volta a stella" },
+    { url: giorgioIngresso.url, alt: "Ingresso con porta in legno" },
+    { url: giorgioBagno.url, alt: "Bagno con doccia e cementine decorate" },
+    { url: giorgioTerrazza.url, alt: "Terrazza con pergolato e affaccio" },
+    { url: giorgioTerrazzaTavolo.url, alt: "Tavolo sulla terrazza con vista sulla cucina" },
+    { url: giorgioVista.url, alt: "Vista sui tetti del centro storico" },
+    { url: giorgioTavoloEsterno.url, alt: "Tavolo esterno con brocca in ceramica" },
+    { url: giorgioPianoCottura.url, alt: "Piano cottura e dettaglio cucina" },
   ],
 };
 
