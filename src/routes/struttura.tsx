@@ -39,7 +39,7 @@ function Struttura() {
           <h2 className="font-serif text-3xl">La famiglia</h2>
           <p className="mt-4 text-muted-foreground">
             Marcello si occupa dell'accoglienza. Rosaria della cucina e delle colazioni. I tre
-            figli — Riccardo, Andrea e Giorgio — danno il nome ai tre alloggi. È un B&amp;B a
+            figli — Richard, Andrew e George — danno il nome ai tre alloggi. È un B&amp;B a
             conduzione familiare nel senso più pieno del termine.
           </p>
         </div>

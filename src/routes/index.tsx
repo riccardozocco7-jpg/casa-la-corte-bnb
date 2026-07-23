@@ -23,9 +23,9 @@ export const Route = createFileRoute("/")({
 });
 
 const alloggi = [
-  { slug: "riccardo", nome: "Riccardo", desc: "Bilocale.", img: riccardoImg.url },
-  { slug: "andrea", nome: "Andrea", desc: "Monolocale.", img: andreaImg.url },
-  { slug: "giorgio", nome: "Giorgio", desc: "Stanza sopra con affaccio al campanile della chiesa.", img: giorgioImg.url },
+  { slug: "riccardo", nome: "Richard", desc: "Un accogliente bilocale, ideale per coppie o famiglie.", img: riccardoImg.url },
+  { slug: "andrea", nome: "Andrew", desc: "Monolocale luminoso e riservato.", img: andreaImg.url },
+  { slug: "giorgio", nome: "George", desc: "Stanza di sopra con affaccio sul campanile della chiesa.", img: giorgioImg.url },
 ] as const;
 
 const servizi = [

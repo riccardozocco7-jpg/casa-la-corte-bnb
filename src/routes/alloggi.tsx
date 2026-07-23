@@ -7,7 +7,7 @@ export const Route = createFileRoute("/alloggi")({
   head: () => ({
     meta: [
       { title: "Alloggi — Corte degli Angeli" },
-      { name: "description", content: "Tre alloggi curati: Riccardo, Andrea e Giorgio. Scopri la stanza giusta per te." },
+      { name: "description", content: "Tre alloggi curati: Richard, Andrew e George. Scopri la stanza giusta per te." },
       { property: "og:title", content: "Alloggi — Corte degli Angeli" },
       { property: "og:description", content: "Tre alloggi a conduzione familiare nel Salento." },
     ],
@@ -16,9 +16,9 @@ export const Route = createFileRoute("/alloggi")({
 });
 
 const alloggi = [
-  { slug: "riccardo", nome: "Riccardo", desc: "Bilocale.", capacity: "2 ospiti", img: riccardoImg.url },
-  { slug: "andrea", nome: "Andrea", desc: "Monolocale.", capacity: "2 ospiti", img: andreaImg.url },
-  { slug: "giorgio", nome: "Giorgio", desc: "Stanza sopra con affaccio al campanile della chiesa.", capacity: "3-4 ospiti", img: giorgioImg.url },
+  { slug: "riccardo", nome: "Richard", desc: "Un accogliente bilocale, ideale per coppie o famiglie.", capacity: "2/4 ospiti", img: riccardoImg.url },
+  { slug: "andrea", nome: "Andrew", desc: "Monolocale luminoso e riservato.", capacity: "2 ospiti", img: andreaImg.url },
+  { slug: "giorgio", nome: "George", desc: "Stanza di sopra con affaccio sul campanile della chiesa.", capacity: "2 ospiti", img: giorgioImg.url },
 ] as const;
 
 function AlloggiLayout() {

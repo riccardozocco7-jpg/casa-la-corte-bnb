@@ -84,7 +84,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "B&B a conduzione familiare nel Salento: tre alloggi (Riccardo, Andrea, Giorgio), a pochi minuti dal mare di Pescoluse, Torre Vado e Castro.",
+          "B&B a conduzione familiare nel Salento: tre alloggi (Richard, Andrew, George), a pochi minuti dal mare di Pescoluse, Torre Vado e Castro.",
       },
       { property: "og:title", content: "B&B Marcello — Salento" },
       {

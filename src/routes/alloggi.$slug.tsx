@@ -1,6 +1,19 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { PhotoPlaceholder } from "../components/PhotoPlaceholder";
-import { Bed, Users, Bath, Ruler, ArrowLeft } from "lucide-react";
+import {
+  Bed,
+  Users,
+  Bath,
+  Ruler,
+  ArrowLeft,
+  DoorOpen,
+  UtensilsCrossed,
+  Wind,
+  Wifi,
+  Tv,
+  WashingMachine,
+  Sparkles,
+} from "lucide-react";
 import riccardoImg from "../assets/riccardo.jpeg.asset.json";
 import andreaImg from "../assets/andrea.png.asset.json";
 import giorgioImg from "../assets/giorgio.jpeg.asset.json";
@@ -79,39 +92,50 @@ type Alloggio = {
   capacity: string;
   letto: string;
   bagno: string;
-  mq: string;
+  mq?: string;
+  servizi?: boolean;
 };
+
+const serviziComuniList = [
+  { icon: DoorOpen, label: "Ingresso indipendente" },
+  { icon: UtensilsCrossed, label: "Cucina attrezzata (induzione, fornetto, frigorifero)" },
+  { icon: Wind, label: "Aria condizionata" },
+  { icon: Wifi, label: "Wi-Fi gratuita" },
+  { icon: Tv, label: "TV" },
+  { icon: WashingMachine, label: "Lavatrice" },
+  { icon: Sparkles, label: "Coperte di lino" },
+];
 
 const data: Record<string, Alloggio> = {
   riccardo: {
-    nome: "Riccardo",
-    tagline: "Vista sugli ulivi, luce del mattino.",
+    nome: "Richard",
+    tagline: "Un accogliente bilocale, ideale per coppie o famiglie.",
     descrizione:
-      "Una camera matrimoniale che affaccia sul giardino di ulivi. Pavimenti in cotto, pareti in calce, biancheria di lino. Ideale per una coppia in cerca di silenzio.",
+      "Un bilocale con volte a botte originali, sulle cui pareti è custodito un dipinto della Madonna di oltre due secoli. Ideale per una coppia o una famiglia in cerca di autenticità.",
+    capacity: "2/4 ospiti",
+    letto: "Letto matrimoniale",
+    bagno: "Bagno privato con doccia",
+    servizi: true,
+  },
+  andrea: {
+    nome: "Andrew",
+    tagline: "Monolocale luminoso e riservato.",
+    descrizione: "È un monolocale ampio, perfetto per coppie o viaggiatori singoli.",
     capacity: "2 ospiti",
     letto: "Letto matrimoniale",
     bagno: "Bagno privato con doccia",
-    mq: "22 mq",
-  },
-  andrea: {
-    nome: "Andrea",
-    tagline: "Suite luminosa e riservata.",
-    descrizione:
-      "La stanza più tranquilla della casa, con una piccola area lettura vicino alla finestra. Perfetta per lunghe permanenze e per chi ama leggere al fresco.",
-    capacity: "2 ospiti",
-    letto: "Letto king size",
-    bagno: "Bagno privato con doccia",
-    mq: "26 mq",
+    mq: "40 mq",
+    servizi: true,
   },
   giorgio: {
-    nome: "Giorgio",
-    tagline: "Spazio per la famiglia.",
+    nome: "George",
+    tagline: "Stanza di sopra con affaccio sul campanile della chiesa.",
     descrizione:
-      "La camera più spaziosa, pensata per famiglie o gruppi di amici. Un letto matrimoniale e due letti singoli, con la possibilità di aggiungere una culla.",
-    capacity: "3-4 ospiti",
-    letto: "Matrimoniale + 2 singoli",
+      "È una piccola stanza ideale per coppie, da qui si può vedere il campanile della chiesa madre.",
+    capacity: "2 ospiti",
+    letto: "Divano letto",
     bagno: "Bagno privato con doccia",
-    mq: "32 mq",
+    servizi: true,
   },
 };
 
@@ -198,7 +222,15 @@ function AlloggioPage() {
             <li className="flex items-center gap-3"><Users className="h-4 w-4 text-primary" /> {alloggio.capacity}</li>
             <li className="flex items-center gap-3"><Bed className="h-4 w-4 text-primary" /> {alloggio.letto}</li>
             <li className="flex items-center gap-3"><Bath className="h-4 w-4 text-primary" /> {alloggio.bagno}</li>
-            <li className="flex items-center gap-3"><Ruler className="h-4 w-4 text-primary" /> {alloggio.mq}</li>
+            {alloggio.mq && (
+              <li className="flex items-center gap-3"><Ruler className="h-4 w-4 text-primary" /> {alloggio.mq}</li>
+            )}
+            {alloggio.servizi &&
+              serviziComuniList.map((s) => (
+                <li key={s.label} className="flex items-center gap-3">
+                  <s.icon className="h-4 w-4 text-primary" /> {s.label}
+                </li>
+              ))}
           </ul>
           <Link to="/contatti" className="mt-6 block rounded-full bg-primary py-3 text-center text-xs font-medium uppercase tracking-widest text-primary-foreground hover:opacity-90">
             Prenota
