@@ -57,6 +57,17 @@ const galleries: Record<string, { url: string; alt: string }[]> = {
     { url: andreaBagno.url, alt: "Bagno con doccia e lavabo d'appoggio" },
     { url: andreaTestata.url, alt: "Dettaglio testata e comodino" },
   ],
+  giorgio: [
+    { url: giorgioSoggiorno.url, alt: "Zona pranzo con volta a botte e TV" },
+    { url: giorgioCucina.url, alt: "Cucina verde con volta a stella" },
+    { url: giorgioIngresso.url, alt: "Ingresso con porta in legno" },
+    { url: giorgioBagno.url, alt: "Bagno con doccia e cementine decorate" },
+    { url: giorgioTerrazza.url, alt: "Terrazza con pergolato e affaccio" },
+    { url: giorgioTerrazzaTavolo.url, alt: "Tavolo sulla terrazza con vista sulla cucina" },
+    { url: giorgioVista.url, alt: "Vista sui tetti del centro storico" },
+    { url: giorgioTavoloEsterno.url, alt: "Tavolo esterno con brocca in ceramica" },
+    { url: giorgioPianoCottura.url, alt: "Piano cottura e dettaglio cucina" },
+  ],
 };
 
 
