@@ -12,6 +12,14 @@ import riccardoTeiera from "../assets/riccardo/teiera.jpeg.asset.json";
 import riccardoNicchia from "../assets/riccardo/nicchia.jpeg.asset.json";
 import riccardoAsciugamano from "../assets/riccardo/asciugamano.jpeg.asset.json";
 import riccardoDettaglio from "../assets/riccardo/dettaglio.jpeg.asset.json";
+import andreaAmbiente from "../assets/andrea/ambiente.jpeg.asset.json";
+import andreaLetto from "../assets/andrea/letto.jpeg.asset.json";
+import andreaCucina from "../assets/andrea/cucina.jpeg.asset.json";
+import andreaSera from "../assets/andrea/sera.jpeg.asset.json";
+import andreaSpecchio from "../assets/andrea/specchio.png.asset.json";
+import andreaCucinaBagno from "../assets/andrea/cucina-bagno.png.asset.json";
+import andreaBagno from "../assets/andrea/bagno.png.asset.json";
+import andreaTestata from "../assets/andrea/testata.png.asset.json";
 
 const heroImages: Record<string, string> = {
   riccardo: riccardoImg.url,
@@ -30,7 +38,18 @@ const galleries: Record<string, { url: string; alt: string }[]> = {
     { url: riccardoTeiera.url, alt: "Servizio da tè sul letto" },
     { url: riccardoAsciugamano.url, alt: "Asciugamano con merletto" },
   ],
+  andrea: [
+    { url: andreaAmbiente.url, alt: "Ambiente con volta a botte e zona pranzo" },
+    { url: andreaLetto.url, alt: "Testata in ferro battuto sul letto" },
+    { url: andreaCucina.url, alt: "Cucina in legno con vista sul bagno" },
+    { url: andreaSera.url, alt: "Ambiente illuminato di sera" },
+    { url: andreaSpecchio.url, alt: "Specchiera antica in legno" },
+    { url: andreaCucinaBagno.url, alt: "Cucina e accesso al bagno" },
+    { url: andreaBagno.url, alt: "Bagno con doccia e lavabo d'appoggio" },
+    { url: andreaTestata.url, alt: "Dettaglio testata e comodino" },
+  ],
 };
+
 
 
 type Alloggio = {
