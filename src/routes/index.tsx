@@ -61,12 +61,12 @@ function Home() {
               Le sue pietre raccontano una delle prime case nel centro storico di Tricase. Oggi, Corte degli Angeli le fa rivivere con la stessa autenticità di sempre.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a
-                href="#"
+              <Link
+                to="/contatti"
                 className="rounded-full bg-primary px-6 py-3 text-sm font-medium uppercase tracking-widest text-primary-foreground hover:opacity-90"
               >
-                Prenota ora
-              </a>
+                Prenota
+              </Link>
               <Link
                 to="/alloggi"
                 className="rounded-full border border-foreground/20 px-6 py-3 text-sm font-medium uppercase tracking-widest hover:border-primary hover:text-primary"
