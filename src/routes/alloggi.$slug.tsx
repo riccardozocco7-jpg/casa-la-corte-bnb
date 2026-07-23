@@ -161,9 +161,9 @@ function AlloggioPage() {
             <li className="flex items-center gap-3"><Bath className="h-4 w-4 text-primary" /> {alloggio.bagno}</li>
             <li className="flex items-center gap-3"><Ruler className="h-4 w-4 text-primary" /> {alloggio.mq}</li>
           </ul>
-          <a href="#" className="mt-6 block rounded-full bg-primary py-3 text-center text-xs font-medium uppercase tracking-widest text-primary-foreground hover:opacity-90">
-            Prenota {alloggio.nome}
-          </a>
+          <Link to="/contatti" className="mt-6 block rounded-full bg-primary py-3 text-center text-xs font-medium uppercase tracking-widest text-primary-foreground hover:opacity-90">
+            Prenota
+          </Link>
         </aside>
       </div>
     </div>

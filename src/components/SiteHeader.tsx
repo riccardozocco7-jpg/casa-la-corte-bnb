@@ -50,12 +50,12 @@ export function SiteHeader() {
           >
             {lang} / {lang === "IT" ? "EN" : "IT"}
           </button>
-          <a
-            href="#"
+          <Link
+            to="/contatti"
             className="hidden rounded-full bg-primary px-5 py-2 text-xs font-medium uppercase tracking-widest text-primary-foreground transition hover:opacity-90 md:inline-block"
           >
             Prenota
-          </a>
+          </Link>
           <button
             className="md:hidden"
             aria-label="Menu"
