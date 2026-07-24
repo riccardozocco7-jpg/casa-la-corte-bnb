@@ -1,5 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { PhotoPlaceholder } from "../components/PhotoPlaceholder";
+import { useT } from "../lib/i18n";
 import {
   Bed,
   Users,
@@ -200,7 +201,6 @@ function AlloggioPage() {
   const { slug } = Route.useParams();
   const hero = heroImages[slug];
   const gallery = galleries[slug];
-  const { useT } = require("../lib/i18n") as typeof import("../lib/i18n");
   const t = useT();
   const idx = t(0, 1) as 0 | 1;
 
