@@ -176,13 +176,13 @@ export const Route = createFileRoute("/alloggi/$slug")({
     return { alloggio };
   },
   head: ({ loaderData }) => {
-    if (!loaderData) return { meta: [{ title: "Alloggio — B&B Marcello" }, { name: "robots", content: "noindex" }] };
+    if (!loaderData) return { meta: [{ title: "Alloggio — Corte degli Angeli" }, { name: "robots", content: "noindex" }] };
     return {
       meta: [
-        { title: `${loaderData.alloggio.nome} — Alloggi B&B Marcello` },
-        { name: "description", content: loaderData.alloggio.descrizione },
-        { property: "og:title", content: `${loaderData.alloggio.nome} — B&B Marcello` },
-        { property: "og:description", content: loaderData.alloggio.tagline },
+        { title: `${loaderData.alloggio.nome} — Alloggi Corte degli Angeli` },
+        { name: "description", content: loaderData.alloggio.descrizione[0] },
+        { property: "og:title", content: `${loaderData.alloggio.nome} — Corte degli Angeli` },
+        { property: "og:description", content: loaderData.alloggio.tagline[0] },
       ],
     };
   },
@@ -200,20 +200,22 @@ function AlloggioPage() {
   const { slug } = Route.useParams();
   const hero = heroImages[slug];
   const gallery = galleries[slug];
+  const { useT } = require("../lib/i18n") as typeof import("../lib/i18n");
+  const t = useT();
+  const idx = t(0, 1) as 0 | 1;
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-12 md:px-6 md:py-16">
       <Link to="/alloggi" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary">
-        <ArrowLeft className="h-4 w-4" /> Tutti gli alloggi
+        <ArrowLeft className="h-4 w-4" /> {t("Tutti gli alloggi", "All rooms")}
       </Link>
 
       <div className="mt-6">
-        <p className="text-xs uppercase tracking-[0.25em] text-primary">Alloggio</p>
+        <p className="text-xs uppercase tracking-[0.25em] text-primary">{t("Alloggio", "Room")}</p>
         <h1 className="mt-2 font-serif text-5xl md:text-6xl">{alloggio.nome}</h1>
-        <p className="mt-3 text-lg text-muted-foreground">{alloggio.tagline}</p>
+        <p className="mt-3 text-lg text-muted-foreground">{alloggio.tagline[idx]}</p>
       </div>
 
-      {/* Gallery */}
       {gallery ? (
         <div className="mt-10 grid gap-3 md:grid-cols-4">
           <div className="md:col-span-2 md:row-span-2 aspect-[4/3] md:aspect-auto overflow-hidden rounded-md bg-muted">
@@ -229,41 +231,37 @@ function AlloggioPage() {
         <div className="mt-10 grid gap-3 md:grid-cols-4">
           {hero ? (
             <div className="md:col-span-2 md:row-span-2 aspect-[4/3] md:aspect-auto overflow-hidden rounded-md bg-muted">
-              <img src={hero} alt={`${alloggio.nome} · principale`} className="h-full w-full object-cover" />
+              <img src={hero} alt={alloggio.nome} className="h-full w-full object-cover" />
             </div>
           ) : (
-            <PhotoPlaceholder label={`${alloggio.nome} · principale`} ratio="landscape" className="md:col-span-2 md:row-span-2" />
+            <PhotoPlaceholder label={alloggio.nome} ratio="landscape" className="md:col-span-2 md:row-span-2" />
           )}
-          <PhotoPlaceholder label="Dettaglio letto" ratio="square" />
-          <PhotoPlaceholder label="Bagno" ratio="square" />
-          <PhotoPlaceholder label="Vista finestra" ratio="square" />
-          <PhotoPlaceholder label="Dettaglio arredo" ratio="square" />
         </div>
       )}
 
       <div className="mt-14 grid gap-12 md:grid-cols-3">
         <div className="md:col-span-2">
-          <h2 className="font-serif text-3xl">La camera</h2>
-          <p className="mt-4 text-muted-foreground">{alloggio.descrizione}</p>
+          <h2 className="font-serif text-3xl">{t("La camera", "The room")}</h2>
+          <p className="mt-4 text-muted-foreground">{alloggio.descrizione[idx]}</p>
         </div>
         <aside className="rounded-lg border border-border bg-card p-6">
-          <h3 className="font-serif text-xl">Caratteristiche</h3>
+          <h3 className="font-serif text-xl">{t("Caratteristiche", "Features")}</h3>
           <ul className="mt-4 space-y-3 text-sm">
-            <li className="flex items-center gap-3"><Users className="h-4 w-4 text-primary" /> {alloggio.capacity}</li>
-            <li className="flex items-center gap-3"><Bed className="h-4 w-4 text-primary" /> {alloggio.letto}</li>
-            <li className="flex items-center gap-3"><Bath className="h-4 w-4 text-primary" /> {alloggio.bagno}</li>
+            <li className="flex items-center gap-3"><Users className="h-4 w-4 text-primary" /> {alloggio.capacity[idx]}</li>
+            <li className="flex items-center gap-3"><Bed className="h-4 w-4 text-primary" /> {alloggio.letto[idx]}</li>
+            <li className="flex items-center gap-3"><Bath className="h-4 w-4 text-primary" /> {alloggio.bagno[idx]}</li>
             {alloggio.mq && (
               <li className="flex items-center gap-3"><Ruler className="h-4 w-4 text-primary" /> {alloggio.mq}</li>
             )}
             {alloggio.servizi &&
               serviziComuniList.map((s) => (
-                <li key={s.label} className="flex items-center gap-3">
-                  <s.icon className="h-4 w-4 text-primary" /> {s.label}
+                <li key={s.label[0]} className="flex items-center gap-3">
+                  <s.icon className="h-4 w-4 text-primary" /> {s.label[idx]}
                 </li>
               ))}
           </ul>
           <Link to="/contatti" className="mt-6 block rounded-full bg-primary py-3 text-center text-xs font-medium uppercase tracking-widest text-primary-foreground hover:opacity-90">
-            Prenota
+            {t("Prenota", "Book")}
           </Link>
         </aside>
       </div>
