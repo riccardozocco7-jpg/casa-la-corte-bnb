@@ -63,6 +63,10 @@ const galleries: Record<string, { url: string; alt: string }[]> = {
     { url: riccardoDettaglio.url, alt: "Dettaglio arredo con scala e cappello" },
     { url: riccardoTeiera.url, alt: "Servizio da tè sul letto" },
     { url: riccardoAsciugamano.url, alt: "Asciugamano con merletto" },
+    { url: riccardoLetto.url, alt: "Letto con testata in legno e volta a botte" },
+    { url: riccardoPoltrona.url, alt: "Poltrona a dondolo e armadio" },
+    { url: riccardoFinestra.url, alt: "Finestra con tende e vista sul bagno" },
+    { url: riccardoLampada.url, alt: "Lampada da comodino con ricamo" },
   ],
   andrea: [
     { url: andreaAmbiente.url, alt: "Ambiente con volta a botte e zona pranzo" },
