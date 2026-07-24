@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Phone, Mail } from "lucide-react";
+import { useT } from "../lib/i18n";
 
 export const Route = createFileRoute("/contatti")({
   head: () => ({
@@ -14,12 +15,13 @@ export const Route = createFileRoute("/contatti")({
 });
 
 function Contatti() {
+  const t = useT();
   return (
     <div className="mx-auto max-w-3xl px-4 py-20 md:px-6 md:py-28">
-      <p className="mb-3 text-xs uppercase tracking-[0.25em] text-primary">Contatti</p>
-      <h1 className="font-serif text-5xl">Prenota il tuo soggiorno.</h1>
+      <p className="mb-3 text-xs uppercase tracking-[0.25em] text-primary">{t("Contatti", "Contact")}</p>
+      <h1 className="font-serif text-5xl">{t("Prenota il tuo soggiorno.", "Book your stay.")}</h1>
       <p className="mt-5 text-muted-foreground">
-        Chiama Marcello o scrivi un'email per verificare disponibilità e prenotare.
+        {t("Chiama Marcello o scrivi un'email per verificare disponibilità e prenotare.", "Call Marcello or send an email to check availability and book.")}
       </p>
 
       <div className="mt-12 grid gap-6 sm:grid-cols-2">
@@ -28,7 +30,7 @@ function Contatti() {
           className="group flex flex-col gap-3 rounded-xl border border-border bg-card p-8 transition hover:border-primary"
         >
           <Phone className="h-6 w-6 text-primary" strokeWidth={1.5} />
-          <span className="text-xs uppercase tracking-widest text-muted-foreground">Telefono</span>
+          <span className="text-xs uppercase tracking-widest text-muted-foreground">{t("Telefono", "Phone")}</span>
           <span className="font-mono text-2xl font-light group-hover:text-primary">+39 320 971 7096</span>
         </a>
 

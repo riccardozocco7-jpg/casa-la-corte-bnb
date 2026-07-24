@@ -6,6 +6,7 @@ import pescoluse from "../assets/dintorni/pescoluse.jpeg.asset.json";
 import torreVado from "../assets/dintorni/torre-vado.jpg.asset.json";
 import castro from "../assets/dintorni/castro.jpg.asset.json";
 import specchia from "../assets/dintorni/specchia.webp.asset.json";
+import { useT } from "../lib/i18n";
 
 export const Route = createFileRoute("/dintorni")({
   head: () => ({
@@ -19,46 +20,63 @@ export const Route = createFileRoute("/dintorni")({
   component: Dintorni,
 });
 
-const luoghi = [
-  {
-    nome: "Tricase Porto",
-    body: "Un piccolo porto a cinque minuti di auto.",
-    img: tricasePorto.url,
-  },
-  {
-    nome: "Marina Serra",
-    body: "Piscina naturale scavata nella roccia. Acqua trasparente.",
-    img: marinaSerra.url,
-  },
-  {
-    nome: "Pescoluse — le Maldive del Salento",
-    body: "Sabbia bianca e fondali bassi. La spiaggia più famosa della zona, splendida al mattino.",
-    img: pescoluse.url,
-  },
-  {
-    nome: "Torre Vado",
-    body: "Cala di sabbia protetta, con una torre di avvistamento del Cinquecento.",
-    img: torreVado.url,
-  },
-  {
-    nome: "Castro",
-    body: "Borgo antico affacciato sull'Adriatico, con la sua marina e la grotta della Zinzulusa.",
-    img: castro.url,
-  },
-  {
-    nome: "Specchia e i borghi vicini",
-    body: "Specchia, Alessano, Presicce: piccoli centri di pietra bianca, botteghe e cortili.",
-    img: specchia.url,
-  },
-];
-
 function Dintorni() {
+  const t = useT();
+
+  const luoghi = [
+    {
+      nome: "Tricase Porto",
+      body: t("Un piccolo porto a cinque minuti di auto.", "A little harbour, five minutes by car."),
+      img: tricasePorto.url,
+    },
+    {
+      nome: "Marina Serra",
+      body: t("Piscina naturale scavata nella roccia. Acqua trasparente.", "Natural pool carved into the rock. Crystal-clear water."),
+      img: marinaSerra.url,
+    },
+    {
+      nome: t("Pescoluse — le Maldive del Salento", "Pescoluse — the Maldives of Salento"),
+      body: t(
+        "Sabbia bianca e fondali bassi. La spiaggia più famosa della zona, splendida al mattino.",
+        "White sand and shallow waters. The most famous beach in the area, stunning in the morning.",
+      ),
+      img: pescoluse.url,
+    },
+    {
+      nome: "Torre Vado",
+      body: t(
+        "Cala di sabbia protetta, con una torre di avvistamento del Cinquecento.",
+        "A sheltered sandy cove with a 16th-century watchtower.",
+      ),
+      img: torreVado.url,
+    },
+    {
+      nome: "Castro",
+      body: t(
+        "Borgo antico affacciato sull'Adriatico, con la sua marina e la grotta della Zinzulusa.",
+        "An ancient village overlooking the Adriatic, with its marina and the Zinzulusa cave.",
+      ),
+      img: castro.url,
+    },
+    {
+      nome: t("Specchia e i borghi vicini", "Specchia and nearby villages"),
+      body: t(
+        "Specchia, Alessano, Presicce: piccoli centri di pietra bianca, botteghe e cortili.",
+        "Specchia, Alessano, Presicce: small white-stone towns full of workshops and courtyards.",
+      ),
+      img: specchia.url,
+    },
+  ];
+
   return (
     <div className="mx-auto max-w-6xl px-4 py-16 md:px-6 md:py-24">
-      <p className="mb-3 text-xs uppercase tracking-[0.25em] text-primary">Dintorni</p>
-      <h1 className="font-serif text-5xl">Il Salento intorno a noi.</h1>
+      <p className="mb-3 text-xs uppercase tracking-[0.25em] text-primary">{t("Dintorni", "Around")}</p>
+      <h1 className="font-serif text-5xl">{t("Il Salento intorno a noi.", "The Salento around us.")}</h1>
       <p className="mt-5 max-w-xl text-muted-foreground">
-        Alcuni dei luoghi che consigliamo di raggiungere in giornata partendo da Corte Degli Angeli.
+        {t(
+          "Alcuni dei luoghi che consigliamo di raggiungere in giornata partendo da Corte Degli Angeli.",
+          "Some of the places we recommend for a day trip from Corte degli Angeli.",
+        )}
       </p>
 
       <div className="mt-14 grid gap-10 md:grid-cols-2">
@@ -79,4 +97,3 @@ function Dintorni() {
     </div>
   );
 }
-
