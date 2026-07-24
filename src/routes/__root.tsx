@@ -14,6 +14,7 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteHeader } from "../components/SiteHeader";
 import { SiteFooter } from "../components/SiteFooter";
 import { StickyBookCTA } from "../components/StickyBookCTA";
+import { LangProvider } from "../lib/i18n";
 
 function NotFoundComponent() {
   return (
