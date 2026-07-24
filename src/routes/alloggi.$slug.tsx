@@ -113,54 +113,58 @@ const galleries: Record<string, { url: string; alt: string }[]> = {
 
 type Alloggio = {
   nome: string;
-  tagline: string;
-  descrizione: string;
-  capacity: string;
-  letto: string;
-  bagno: string;
+  tagline: [string, string];
+  descrizione: [string, string];
+  capacity: [string, string];
+  letto: [string, string];
+  bagno: [string, string];
   mq?: string;
   servizi?: boolean;
 };
 
-const serviziComuniList = [
-  { icon: DoorOpen, label: "Ingresso indipendente" },
-  { icon: UtensilsCrossed, label: "Cucina attrezzata (induzione, fornetto, frigorifero)" },
-  { icon: Wind, label: "Aria condizionata" },
-  { icon: Wifi, label: "Wi-Fi gratuita" },
-  { icon: Tv, label: "TV" },
-  { icon: WashingMachine, label: "Lavatrice" },
-  { icon: Sparkles, label: "Coperte di lino" },
+const serviziComuniList: { icon: typeof DoorOpen; label: [string, string] }[] = [
+  { icon: DoorOpen, label: ["Ingresso indipendente", "Independent entrance"] },
+  { icon: UtensilsCrossed, label: ["Cucina attrezzata (induzione, fornetto, frigorifero)", "Equipped kitchen (induction, oven, fridge)"] },
+  { icon: Wind, label: ["Aria condizionata", "Air conditioning"] },
+  { icon: Wifi, label: ["Wi-Fi gratuita", "Free Wi-Fi"] },
+  { icon: Tv, label: ["TV", "TV"] },
+  { icon: WashingMachine, label: ["Lavatrice", "Washing machine"] },
+  { icon: Sparkles, label: ["Coperte di lino", "Linen bedding"] },
 ];
 
 const data: Record<string, Alloggio> = {
   riccardo: {
     nome: "Richard",
-    tagline: "Un accogliente bilocale, ideale per coppie o famiglie.",
-    descrizione:
+    tagline: ["Un accogliente bilocale, ideale per coppie o famiglie.", "A cosy two-room flat, ideal for couples or families."],
+    descrizione: [
       "Un bilocale con volte a botte originali, sulle cui pareti è custodito un dipinto della Madonna di oltre due secoli. Ideale per una coppia o una famiglia in cerca di autenticità.",
-    capacity: "2/4 ospiti",
-    letto: "Letto matrimoniale",
-    bagno: "Bagno privato con doccia",
+      "A two-room flat with original barrel vaults, whose walls host a Madonna painting more than two centuries old. Ideal for a couple or a family seeking authenticity.",
+    ],
+    capacity: ["2/4 ospiti", "2/4 guests"],
+    letto: ["Letto matrimoniale", "Double bed"],
+    bagno: ["Bagno privato con doccia", "Private bathroom with shower"],
     servizi: true,
   },
   andrea: {
     nome: "Andrew",
-    tagline: "Monolocale luminoso e riservato.",
-    descrizione: "È un monolocale ampio, perfetto per coppie o viaggiatori singoli.",
-    capacity: "2 ospiti",
-    letto: "Letto matrimoniale",
-    bagno: "Bagno privato con doccia",
+    tagline: ["Monolocale luminoso e riservato.", "Bright and private studio."],
+    descrizione: ["È un monolocale ampio, perfetto per coppie o viaggiatori singoli.", "A spacious studio, perfect for couples or solo travellers."],
+    capacity: ["2 ospiti", "2 guests"],
+    letto: ["Letto matrimoniale", "Double bed"],
+    bagno: ["Bagno privato con doccia", "Private bathroom with shower"],
     mq: "40 mq",
     servizi: true,
   },
   giorgio: {
     nome: "George",
-    tagline: "Stanza di sopra con affaccio sul campanile della chiesa.",
-    descrizione:
+    tagline: ["Stanza di sopra con affaccio sul campanile della chiesa.", "Upstairs room facing the church bell tower."],
+    descrizione: [
       "È una piccola stanza ideale per coppie, da qui si può vedere il campanile della chiesa madre.",
-    capacity: "2 ospiti",
-    letto: "Divano letto",
-    bagno: "Bagno privato con doccia",
+      "A small room ideal for couples, with a view of the main church's bell tower.",
+    ],
+    capacity: ["2 ospiti", "2 guests"],
+    letto: ["Divano letto", "Sofa bed"],
+    bagno: ["Bagno privato con doccia", "Private bathroom with shower"],
     servizi: true,
   },
 };
