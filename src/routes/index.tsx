@@ -78,8 +78,8 @@ function Home() {
             </div>
           </div>
 
-          <div className="grid grid-cols-3 gap-2">
-            <div className="relative col-span-2 row-span-2 aspect-[3/4] overflow-hidden rounded-md">
+          <div className="grid grid-cols-3 grid-rows-3 gap-2">
+            <div className="col-span-2 row-span-3 overflow-hidden rounded-md">
               <img
                 src={corteIngressoHero.url}
                 alt="Ingresso in pietra di Corte degli Angeli"
@@ -88,18 +88,23 @@ function Home() {
                 decoding="async"
               />
             </div>
-            <PhotoPlaceholder label="Dettaglio" ratio="square" />
-            <PhotoPlaceholder label="Giardino" ratio="square" />
+            <div className="aspect-square overflow-hidden rounded-md">
+              <img src={homeLibro.url} alt="Dettaglio libro e fichi d'india" className="h-full w-full object-cover" loading="lazy" />
+            </div>
+            <div className="aspect-square overflow-hidden rounded-md">
+              <img src={homeMadonna.url} alt="Nicchia con dipinto della Madonna" className="h-full w-full object-cover" loading="lazy" />
+            </div>
+            <div className="aspect-square overflow-hidden rounded-md">
+              <img src={homeBrocca.url} alt="Brocca in ceramica salentina" className="h-full w-full object-cover" loading="lazy" />
+            </div>
           </div>
         </div>
       </section>
 
       {/* STORIA */}
       <section className="mx-auto max-w-6xl px-4 py-20 md:px-6">
-        <div className="grid gap-12 md:grid-cols-2 md:items-center">
-          <PhotoPlaceholder label="La famiglia · ritratto" ratio="landscape" />
-          <div>
-            <p className="mb-3 text-xs uppercase tracking-[0.25em] text-accent">La nostra storia</p>
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="mb-3 text-xs uppercase tracking-[0.25em] text-accent">La nostra storia</p>
             <h2 className="font-serif text-4xl">Una casa che accoglie da generazioni.</h2>
             <p className="mt-5 text-muted-foreground">
               Marcello e Maria Rosaria hanno trasformato questa struttura in una casa vacanza a
