@@ -117,7 +117,6 @@ function Home() {
             >
               Scopri la struttura <ArrowRight className="h-4 w-4" />
             </Link>
-          </div>
         </div>
       </section>
 
