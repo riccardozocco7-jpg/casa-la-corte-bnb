@@ -26,23 +26,46 @@ function Struttura() {
         <PhotoPlaceholder label="Panoramica della struttura" ratio="wide" />
       </div>
 
-      <div className="mt-12 grid gap-10 md:grid-cols-2">
-        <div>
-          <h2 className="font-serif text-3xl">La storia</h2>
-          <p className="mt-4 text-muted-foreground">
-            La casa è nata come dimora di famiglia, tra gli ulivi del Salento. Marcello e Rosaria,
-            insieme ai figli, l'hanno aperta agli ospiti mantenendo intatto il carattere autentico
-            del luogo: pietra, calce, legno, e i ritmi lenti della campagna salentina.
-          </p>
-        </div>
-        <div>
-          <h2 className="font-serif text-3xl">La famiglia</h2>
-          <p className="mt-4 text-muted-foreground">
-            Marcello si occupa dell'accoglienza. Rosaria della cucina e delle colazioni. I tre
-            figli — Richard, Andrew e George — danno il nome ai tre alloggi. È un B&amp;B a
-            conduzione familiare nel senso più pieno del termine.
-          </p>
-        </div>
+      <div className="mt-12 max-w-3xl space-y-5 text-muted-foreground">
+        <h2 className="font-serif text-3xl text-foreground">La struttura</h2>
+        <p>
+          Nel cuore del centro storico di Tricase sorge Corte degli Angeli, un'elegante dimora
+          storica recentemente restaurata che custodisce l'anima autentica del Salento. Situata a
+          soli 3 km dalla splendida costa sud-adriatica, la struttura nasce all'interno di un'antica
+          corte salentina, dove il fascino dell'architettura tradizionale si fonde armoniosamente
+          con i comfort moderni, offrendo agli ospiti un soggiorno all'insegna del relax, della
+          storia e dell'ospitalità.
+        </p>
+        <p>
+          Ogni ambiente è stato recuperato con grande attenzione, preservando gli elementi originali
+          che raccontano il passato della dimora. Tra questi spicca l'antico granaio, testimonianza
+          della vita rurale di un tempo, oggi valorizzato come parte integrante della struttura e
+          della sua identità. Un luogo ricco di memoria che permette agli ospiti di immergersi nella
+          storia del territorio e di scoprire le tradizioni della cultura salentina.
+        </p>
+        <p>
+          A rendere ancora più preziosa Corte degli Angeli è la presenza di antichi dipinti della
+          Madonna, risalenti a oltre due secoli fa. Queste opere, custodite all'interno della dimora,
+          rappresentano un importante patrimonio storico e artistico, contribuendo a creare
+          un'atmosfera unica, dove arte, spiritualità e tradizione convivono in perfetto equilibrio.
+        </p>
+        <p>
+          Il vero cuore della struttura è l'ampia corte privata a cielo aperto, uno spazio riservato
+          e silenzioso dove il tempo sembra rallentare. Qui gli ospiti possono concedersi momenti di
+          tranquillità, leggere un libro, gustare una colazione all'aperto o semplicemente lasciarsi
+          avvolgere dalla quiete tipica delle antiche corti salentine.
+        </p>
+        <p>
+          Grazie alla sua posizione privilegiata, Corte degli Angeli permette di vivere appieno il
+          fascino del centro storico di Tricase, con le sue viuzze, i palazzi storici e le botteghe
+          locali, rimanendo allo stesso tempo a pochi minuti dalle suggestive scogliere e dalle
+          acque cristalline della costa adriatica del Salento.
+        </p>
+        <p>
+          Soggiornare a Corte degli Angeli significa scegliere un luogo dove storia, autenticità e
+          comfort si incontrano, regalando un'esperienza che va oltre la semplice vacanza: un
+          viaggio nella cultura e nelle tradizioni di una delle terre più affascinanti della Puglia.
+        </p>
       </div>
 
       <div className="mt-20">
@@ -50,13 +73,12 @@ function Struttura() {
         <h2 className="font-serif text-4xl">Un'ospitalità che rispetta il luogo.</h2>
         <div className="mt-10 grid gap-8 md:grid-cols-3">
           {[
-            { icon: Leaf, title: "Materiali naturali", body: "Pietra locale, calce, legno. Nessuna finitura sintetica negli ambienti." },
-            { icon: Home, title: "Energia rinnovabile", body: "Pannelli fotovoltaici e solare termico coprono buona parte dei consumi." },
+            { icon: Leaf, title: "Materiali tradizionali" },
+            { icon: Home, title: "Energia rinnovabile" },
           ].map((v) => (
             <div key={v.title} className="rounded-lg border border-border bg-card p-6">
               <v.icon className="h-6 w-6 text-primary" strokeWidth={1.5} />
               <h3 className="mt-4 font-serif text-2xl">{v.title}</h3>
-              <p className="mt-2 text-sm text-muted-foreground">{v.body}</p>
             </div>
           ))}
         </div>

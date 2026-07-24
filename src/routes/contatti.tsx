@@ -29,7 +29,7 @@ function Contatti() {
         >
           <Phone className="h-6 w-6 text-primary" strokeWidth={1.5} />
           <span className="text-xs uppercase tracking-widest text-muted-foreground">Telefono</span>
-          <span className="font-serif text-2xl group-hover:text-primary">+39 320 971 7096</span>
+          <span className="font-mono text-2xl font-light group-hover:text-primary">+39 320 971 7096</span>
         </a>
 
         <a

@@ -27,7 +27,7 @@ const luoghi = [
   },
   {
     nome: "Marina Serra",
-    body: "Piscina naturale scavata nella roccia. Acqua trasparente, ideale per lo snorkeling.",
+    body: "Piscina naturale scavata nella roccia. Acqua trasparente.",
     img: marinaSerra.url,
   },
   {
