@@ -29,6 +29,7 @@ import riccardoLampada from "../assets/riccardo/lampada.jpeg.asset.json";
 import riccardoPoltrona from "../assets/riccardo/poltrona.jpeg.asset.json";
 import riccardoFinestra from "../assets/riccardo/finestra.jpeg.asset.json";
 import riccardoLetto from "../assets/riccardo/letto.jpeg.asset.json";
+import riccardoArco from "../assets/riccardo/arco.jpeg.asset.json";
 import andreaAmbiente from "../assets/andrea/ambiente.jpeg.asset.json";
 import andreaLetto from "../assets/andrea/letto.jpeg.asset.json";
 import andreaCucina from "../assets/andrea/cucina.jpeg.asset.json";
@@ -37,6 +38,14 @@ import andreaSpecchio from "../assets/andrea/specchio.png.asset.json";
 import andreaCucinaBagno from "../assets/andrea/cucina-bagno.png.asset.json";
 import andreaBagno from "../assets/andrea/bagno.png.asset.json";
 import andreaTestata from "../assets/andrea/testata.png.asset.json";
+import andreaCamera from "../assets/andrea/camera.jpeg.asset.json";
+import andreaRosa from "../assets/andrea/rosa.jpeg.asset.json";
+import andreaLavabo from "../assets/andrea/lavabo.jpeg.asset.json";
+import andreaNotte from "../assets/andrea/notte.jpeg.asset.json";
+import andreaFichi from "../assets/andrea/fichi.jpeg.asset.json";
+import andreaVanity from "../assets/andrea/vanity.jpeg.asset.json";
+import andreaNicchia from "../assets/andrea/nicchia.jpeg.asset.json";
+import andreaLavaboSpecchio from "../assets/andrea/lavabo-specchio.jpeg.asset.json";
 import giorgioSoggiorno from "../assets/giorgio/soggiorno.png.asset.json";
 import giorgioCucina from "../assets/giorgio/cucina.jpeg.asset.json";
 import giorgioIngresso from "../assets/giorgio/ingresso.jpeg.asset.json";
@@ -67,6 +76,7 @@ const galleries: Record<string, { url: string; alt: string }[]> = {
     { url: riccardoPoltrona.url, alt: "Poltrona a dondolo e armadio" },
     { url: riccardoFinestra.url, alt: "Finestra con tende e vista sul bagno" },
     { url: riccardoLampada.url, alt: "Lampada da comodino con ricamo" },
+    { url: riccardoArco.url, alt: "Arco in pietra con TV e cabina armadio" },
   ],
   andrea: [
     { url: andreaAmbiente.url, alt: "Ambiente con volta a botte e zona pranzo" },
@@ -77,6 +87,14 @@ const galleries: Record<string, { url: string; alt: string }[]> = {
     { url: andreaCucinaBagno.url, alt: "Cucina e accesso al bagno" },
     { url: andreaBagno.url, alt: "Bagno con doccia e lavabo d'appoggio" },
     { url: andreaTestata.url, alt: "Dettaglio testata e comodino" },
+    { url: andreaCamera.url, alt: "Camera con volta a botte e testata in ferro battuto" },
+    { url: andreaRosa.url, alt: "Rosa rossa e libro aperto sul letto" },
+    { url: andreaLavabo.url, alt: "Dettaglio del lavabo d'appoggio in ceramica" },
+    { url: andreaNotte.url, alt: "Ambiente in atmosfera serale" },
+    { url: andreaFichi.url, alt: "Fichi d'india e libro aperto sul tavolo" },
+    { url: andreaVanity.url, alt: "Specchiera antica e zona letto" },
+    { url: andreaNicchia.url, alt: "Nicchia illuminata con damigiana verde" },
+    { url: andreaLavaboSpecchio.url, alt: "Lavabo con specchio e lampadario riflesso" },
   ],
   giorgio: [
     { url: giorgioSoggiorno.url, alt: "Zona pranzo con volta a botte e TV" },
