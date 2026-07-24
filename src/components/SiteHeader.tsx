@@ -1,19 +1,25 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-
-const navItems = [
-  { to: "/", label: "Home" },
-  { to: "/struttura", label: "La struttura" },
-  { to: "/alloggi", label: "Alloggi" },
-  { to: "/dintorni", label: "Dintorni" },
-  { to: "/recensioni", label: "Recensioni" },
-  { to: "/contatti", label: "Contatti" },
-] as const;
+import { useLang, useT } from "../lib/i18n";
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
-  const [lang, setLang] = useState<"IT" | "EN">("IT");
+  const { lang, toggle } = useLang();
+  const t = useT();
+
+  const navItems = [
+    { to: "/", label: t("Home", "Home") },
+    { to: "/struttura", label: t("La struttura", "The house") },
+    { to: "/alloggi", label: t("Alloggi", "Rooms") },
+    { to: "/dintorni", label: t("Dintorni", "Around") },
+    { to: "/recensioni", label: t("Recensioni", "Reviews") },
+    { to: "/contatti", label: t("Contatti", "Contact") },
+  ] as const;
+
+  const other: "IT" | "EN" = lang === "it" ? "EN" : "IT";
+  const current: "IT" | "EN" = lang === "it" ? "IT" : "EN";
+  const ariaSwitch = t(`Passa all'inglese`, "Switch to Italian");
 
   return (
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/85 backdrop-blur">
@@ -44,18 +50,30 @@ export function SiteHeader() {
 
         <div className="flex items-center gap-3">
           <button
-            onClick={() => setLang(lang === "IT" ? "EN" : "IT")}
-            className="hidden text-xs font-medium tracking-widest text-foreground/60 hover:text-primary md:block"
-            aria-label="Cambia lingua"
+            onClick={toggle}
+            aria-label={ariaSwitch}
+            title={ariaSwitch}
+            className="hidden items-center gap-1 rounded-full border border-border/70 px-2.5 py-1 text-[11px] font-medium tracking-widest text-foreground/70 transition hover:border-primary/60 hover:text-primary md:inline-flex"
           >
-            {lang} / {lang === "IT" ? "EN" : "IT"}
+            <span className="text-foreground">{current}</span>
+            <span aria-hidden className="text-foreground/30">/</span>
+            <span>{other}</span>
           </button>
           <Link
             to="/contatti"
             className="hidden rounded-full bg-primary px-5 py-2 text-xs font-medium uppercase tracking-widest text-primary-foreground transition hover:opacity-90 md:inline-block"
           >
-            Prenota
+            {t("Prenota", "Book")}
           </Link>
+          <button
+            onClick={toggle}
+            aria-label={ariaSwitch}
+            className="inline-flex items-center gap-1 rounded-full border border-border/70 px-2.5 py-1 text-[11px] font-medium tracking-widest text-foreground/70 md:hidden"
+          >
+            <span className="text-foreground">{current}</span>
+            <span aria-hidden className="text-foreground/30">/</span>
+            <span>{other}</span>
+          </button>
           <button
             className="md:hidden"
             aria-label="Menu"
@@ -81,12 +99,6 @@ export function SiteHeader() {
                 {n.label}
               </Link>
             ))}
-            <button
-              onClick={() => setLang(lang === "IT" ? "EN" : "IT")}
-              className="mt-2 self-start text-xs tracking-widest text-foreground/60"
-            >
-              {lang} / {lang === "IT" ? "EN" : "IT"}
-            </button>
           </nav>
         </div>
       )}
