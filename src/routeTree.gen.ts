@@ -9,32 +9,17 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as IndexRouteImport } from './routes/index'
-import { Route as AlloggiRouteImport } from './routes/alloggi'
-import { Route as ContattiRouteImport } from './routes/contatti'
-import { Route as DintorniRouteImport } from './routes/dintorni'
-import { Route as RecensioniRouteImport } from './routes/recensioni'
 import { Route as StrutturaRouteImport } from './routes/struttura'
+import { Route as RecensioniRouteImport } from './routes/recensioni'
+import { Route as DintorniRouteImport } from './routes/dintorni'
+import { Route as ContattiRouteImport } from './routes/contatti'
+import { Route as AlloggiRouteImport } from './routes/alloggi'
+import { Route as IndexRouteImport } from './routes/index'
 import { Route as AlloggiSlugRouteImport } from './routes/alloggi.$slug'
 
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AlloggiRoute = AlloggiRouteImport.update({
-  id: '/alloggi',
-  path: '/alloggi',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ContattiRoute = ContattiRouteImport.update({
-  id: '/contatti',
-  path: '/contatti',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DintorniRoute = DintorniRouteImport.update({
-  id: '/dintorni',
-  path: '/dintorni',
+const StrutturaRoute = StrutturaRouteImport.update({
+  id: '/struttura',
+  path: '/struttura',
   getParentRoute: () => rootRouteImport,
 } as any)
 const RecensioniRoute = RecensioniRouteImport.update({
@@ -42,9 +27,24 @@ const RecensioniRoute = RecensioniRouteImport.update({
   path: '/recensioni',
   getParentRoute: () => rootRouteImport,
 } as any)
-const StrutturaRoute = StrutturaRouteImport.update({
-  id: '/struttura',
-  path: '/struttura',
+const DintorniRoute = DintorniRouteImport.update({
+  id: '/dintorni',
+  path: '/dintorni',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContattiRoute = ContattiRouteImport.update({
+  id: '/contatti',
+  path: '/contatti',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AlloggiRoute = AlloggiRouteImport.update({
+  id: '/alloggi',
+  path: '/alloggi',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AlloggiSlugRoute = AlloggiSlugRouteImport.update({
@@ -122,32 +122,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/alloggi': {
-      id: '/alloggi'
-      path: '/alloggi'
-      fullPath: '/alloggi'
-      preLoaderRoute: typeof AlloggiRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/contatti': {
-      id: '/contatti'
-      path: '/contatti'
-      fullPath: '/contatti'
-      preLoaderRoute: typeof ContattiRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/dintorni': {
-      id: '/dintorni'
-      path: '/dintorni'
-      fullPath: '/dintorni'
-      preLoaderRoute: typeof DintorniRouteImport
+    '/struttura': {
+      id: '/struttura'
+      path: '/struttura'
+      fullPath: '/struttura'
+      preLoaderRoute: typeof StrutturaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/recensioni': {
@@ -157,11 +136,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RecensioniRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/struttura': {
-      id: '/struttura'
-      path: '/struttura'
-      fullPath: '/struttura'
-      preLoaderRoute: typeof StrutturaRouteImport
+    '/dintorni': {
+      id: '/dintorni'
+      path: '/dintorni'
+      fullPath: '/dintorni'
+      preLoaderRoute: typeof DintorniRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contatti': {
+      id: '/contatti'
+      path: '/contatti'
+      fullPath: '/contatti'
+      preLoaderRoute: typeof ContattiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/alloggi': {
+      id: '/alloggi'
+      path: '/alloggi'
+      fullPath: '/alloggi'
+      preLoaderRoute: typeof AlloggiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/alloggi/$slug': {
@@ -196,13 +196,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

@@ -25,6 +25,10 @@ import riccardoTeiera from "../assets/riccardo/teiera.jpeg.asset.json";
 import riccardoNicchia from "../assets/riccardo/nicchia.jpeg.asset.json";
 import riccardoAsciugamano from "../assets/riccardo/asciugamano.jpeg.asset.json";
 import riccardoDettaglio from "../assets/riccardo/dettaglio.jpeg.asset.json";
+import riccardoLampada from "../assets/riccardo/lampada.jpeg.asset.json";
+import riccardoPoltrona from "../assets/riccardo/poltrona.jpeg.asset.json";
+import riccardoFinestra from "../assets/riccardo/finestra.jpeg.asset.json";
+import riccardoLetto from "../assets/riccardo/letto.jpeg.asset.json";
 import andreaAmbiente from "../assets/andrea/ambiente.jpeg.asset.json";
 import andreaLetto from "../assets/andrea/letto.jpeg.asset.json";
 import andreaCucina from "../assets/andrea/cucina.jpeg.asset.json";
@@ -59,6 +63,10 @@ const galleries: Record<string, { url: string; alt: string }[]> = {
     { url: riccardoDettaglio.url, alt: "Dettaglio arredo con scala e cappello" },
     { url: riccardoTeiera.url, alt: "Servizio da tè sul letto" },
     { url: riccardoAsciugamano.url, alt: "Asciugamano con merletto" },
+    { url: riccardoLetto.url, alt: "Letto con testata in legno e volta a botte" },
+    { url: riccardoPoltrona.url, alt: "Poltrona a dondolo e armadio" },
+    { url: riccardoFinestra.url, alt: "Finestra con tende e vista sul bagno" },
+    { url: riccardoLampada.url, alt: "Lampada da comodino con ricamo" },
   ],
   andrea: [
     { url: andreaAmbiente.url, alt: "Ambiente con volta a botte e zona pranzo" },
