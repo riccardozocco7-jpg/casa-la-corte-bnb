@@ -32,6 +32,7 @@ import riccardoPoltrona from "../assets/riccardo/poltrona.jpeg.asset.json";
 import riccardoFinestra from "../assets/riccardo/finestra.jpeg.asset.json";
 import riccardoLetto from "../assets/riccardo/letto.jpeg.asset.json";
 import riccardoArco from "../assets/riccardo/arco.jpeg.asset.json";
+import riccardoBagnoRichard from "../assets/riccardo/bagno-richard.jpg.asset.json";
 import andreaAmbiente from "../assets/andrea/ambiente.jpeg.asset.json";
 import andreaLetto from "../assets/andrea/letto.jpeg.asset.json";
 import andreaCucina from "../assets/andrea/cucina.jpeg.asset.json";
