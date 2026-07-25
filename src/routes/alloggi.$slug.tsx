@@ -14,6 +14,7 @@ import {
   Tv,
   WashingMachine,
   Sparkles,
+  Droplets,
 } from "lucide-react";
 import riccardoImg from "../assets/riccardo.jpeg.asset.json";
 import andreaImg from "../assets/andrea.png.asset.json";
@@ -121,6 +122,7 @@ type Alloggio = {
   bagno: [string, string];
   mq?: string;
   servizi?: boolean;
+  lavastoviglie?: boolean;
 };
 
 const serviziComuniList: { icon: typeof DoorOpen; label: [string, string] }[] = [
@@ -145,6 +147,7 @@ const data: Record<string, Alloggio> = {
     letto: ["Letto matrimoniale", "Double bed"],
     bagno: ["Bagno privato con doccia", "Private bathroom with shower"],
     servizi: true,
+    lavastoviglie: true,
   },
   andrea: {
     nome: "Andrew",
@@ -259,6 +262,11 @@ function AlloggioPage() {
                   <s.icon className="h-4 w-4 text-primary" /> {s.label[idx]}
                 </li>
               ))}
+            {alloggio.lavastoviglie && (
+              <li className="flex items-center gap-3">
+                <Droplets className="h-4 w-4 text-primary" /> {t("Lavastoviglie", "Dishwasher")}
+              </li>
+            )}
           </ul>
           <Link to="/contatti" className="mt-6 block rounded-full bg-primary py-3 text-center text-xs font-medium uppercase tracking-widest text-primary-foreground hover:opacity-90">
             {t("Prenota", "Book")}
