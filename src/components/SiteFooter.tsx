@@ -28,7 +28,7 @@ export function SiteFooter() {
           <h4 className="mb-3 text-xs uppercase tracking-widest text-foreground/60">{t("Contatti", "Contact")}</h4>
           <ul className="space-y-2 text-sm text-muted-foreground">
             <li className="flex items-center gap-2"><Phone className="h-4 w-4" /> +39 · 3209717096</li>
-            <li className="flex items-center gap-2"><Mail className="h-4 w-4" /> email · marcellozocco2@gmail.com</li>
+            <li className="flex items-center gap-2"><Mail className="h-4 w-4" /> email · marcello.zocco2@gmail.com</li>
           </ul>
         </div>
 
