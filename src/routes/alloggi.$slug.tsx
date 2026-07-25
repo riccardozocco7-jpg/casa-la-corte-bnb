@@ -122,6 +122,7 @@ type Alloggio = {
   bagno: [string, string];
   mq?: string;
   servizi?: boolean;
+  lavastoviglie?: boolean;
 };
 
 const serviziComuniList: { icon: typeof DoorOpen; label: [string, string] }[] = [
