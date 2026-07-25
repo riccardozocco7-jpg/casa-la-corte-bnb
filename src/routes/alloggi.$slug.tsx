@@ -80,6 +80,7 @@ const galleries: Record<string, { url: string; alt: string }[]> = {
     { url: riccardoFinestra.url, alt: "Finestra con tende e vista sul bagno" },
     { url: riccardoLampada.url, alt: "Lampada da comodino con ricamo" },
     { url: riccardoArco.url, alt: "Arco in pietra con TV e cabina armadio" },
+    { url: riccardoBagnoRichard.url, alt: "Bagno con lavabo d'appoggio e doccia" },
   ],
   andrea: [
     { url: andreaAmbiente.url, alt: "Ambiente con volta a botte e zona pranzo" },
