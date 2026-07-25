@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import lampioneSole from "../assets/struttura/lampione-sole.jpg.asset.json";
+
 import { Leaf, Home } from "lucide-react";
 import { useT } from "../lib/i18n";
 
@@ -24,9 +24,6 @@ function Struttura() {
         {t("Una casa di famiglia diventata luogo di ospitalità.", "A family home turned into a place of hospitality.")}
       </h1>
 
-      <div className="mt-12 overflow-hidden rounded-md aspect-[16/9] md:aspect-[21/9]">
-        <img src={lampioneSole.url} alt={t("Dettaglio lampione e sole in ceramica", "Lamp and ceramic sun detail")} className="h-full w-full object-cover" loading="lazy" />
-      </div>
 
       <div className="mt-12 max-w-3xl space-y-5 text-muted-foreground">
         <h2 className="font-serif text-3xl text-foreground">{t("La struttura", "The house")}</h2>
