@@ -38,7 +38,7 @@ function Home() {
     { icon: UtensilsCrossed, label: t("Cucina", "Kitchen") },
     { icon: Wifi, label: t("Wifi", "Wi-Fi") },
     { icon: CircleParking, label: t("Parcheggio gratuito", "Free parking") },
-    { icon: Dog, label: t("Animali domestici ammessi", "Pets welcome") },
+    { icon: Dog, label: t("Animali di servizio ammessi", "Service animals welcome") },
     { icon: WashingMachine, label: t("Lavatrice Gratis (nell'edificio)", "Free washing machine (in the building)") },
     { icon: Wind, label: t("Sistema di aria condizionata a split", "Split air conditioning") },
   ];
