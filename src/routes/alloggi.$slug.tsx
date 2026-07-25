@@ -151,7 +151,7 @@ const data: Record<string, Alloggio> = {
   },
   andrea: {
     nome: "Andrew",
-    tagline: ["Monolocale luminoso e riservato.", "Bright and private studio."],
+    tagline: ["Monolocale open space luminoso e riservato.", "Bright and private open space studio."],
     descrizione: ["È un monolocale ampio, perfetto per coppie o viaggiatori singoli.", "A spacious studio, perfect for couples or solo travellers."],
     capacity: ["2 ospiti", "2 guests"],
     letto: ["Letto matrimoniale", "Double bed"],
