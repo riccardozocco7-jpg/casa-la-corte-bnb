@@ -24,7 +24,6 @@ function Struttura() {
         {t("Una casa di famiglia diventata luogo di ospitalità.", "A family home turned into a place of hospitality.")}
       </h1>
 
-
       <div className="mt-12 max-w-3xl space-y-5 text-muted-foreground">
         <h2 className="font-serif text-3xl text-foreground">{t("La struttura", "The house")}</h2>
         <p>
