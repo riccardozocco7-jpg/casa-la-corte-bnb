@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { PhotoPlaceholder } from "../components/PhotoPlaceholder";
+import lampioneSole from "../assets/struttura/lampione-sole.jpg.asset.json";
 import { Leaf, Home } from "lucide-react";
 import { useT } from "../lib/i18n";
 
