@@ -37,7 +37,7 @@ function Home() {
   const servizi = [
     { icon: UtensilsCrossed, label: t("Cucina", "Kitchen") },
     { icon: Wifi, label: t("Wifi", "Wi-Fi") },
-    { icon: CircleParking, label: t("Parcheggio gratuito in strada", "Free street parking") },
+    { icon: CircleParking, label: t("Parcheggio gratuito", "Free parking") },
     { icon: Dog, label: t("Animali domestici ammessi", "Pets welcome") },
     { icon: WashingMachine, label: t("Lavatrice Gratis (nell'edificio)", "Free washing machine (in the building)") },
     { icon: Wind, label: t("Sistema di aria condizionata a split", "Split air conditioning") },
