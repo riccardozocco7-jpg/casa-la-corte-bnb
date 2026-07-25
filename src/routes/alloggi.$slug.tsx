@@ -262,6 +262,11 @@ function AlloggioPage() {
                   <s.icon className="h-4 w-4 text-primary" /> {s.label[idx]}
                 </li>
               ))}
+            {alloggio.lavastoviglie && (
+              <li className="flex items-center gap-3">
+                <Droplets className="h-4 w-4 text-primary" /> {t("Lavastoviglie", "Dishwasher")}
+              </li>
+            )}
           </ul>
           <Link to="/contatti" className="mt-6 block rounded-full bg-primary py-3 text-center text-xs font-medium uppercase tracking-widest text-primary-foreground hover:opacity-90">
             {t("Prenota", "Book")}
