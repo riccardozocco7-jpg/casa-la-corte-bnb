@@ -35,13 +35,13 @@ function Contatti() {
         </a>
 
         <a
-          href="mailto:marcellozocco2@gmail.com"
+          href="mailto:marcello.zocco2@gmail.com"
           className="group flex flex-col gap-3 rounded-xl border border-border bg-card p-8 transition hover:border-primary"
         >
           <Mail className="h-6 w-6 text-primary" strokeWidth={1.5} />
           <span className="text-xs uppercase tracking-widest text-muted-foreground">Email</span>
           <span className="font-serif text-xl break-all group-hover:text-primary">
-            marcellozocco2@gmail.com
+            marcello.zocco2@gmail.com
           </span>
         </a>
       </div>
