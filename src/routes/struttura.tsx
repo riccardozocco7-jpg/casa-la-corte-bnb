@@ -24,8 +24,8 @@ function Struttura() {
         {t("Una casa di famiglia diventata luogo di ospitalità.", "A family home turned into a place of hospitality.")}
       </h1>
 
-      <div className="mt-12">
-        <PhotoPlaceholder label={t("Panoramica della struttura", "House overview")} ratio="wide" />
+      <div className="mt-12 overflow-hidden rounded-md aspect-[16/9] md:aspect-[21/9]">
+        <img src={lampioneSole.url} alt={t("Dettaglio lampione e sole in ceramica", "Lamp and ceramic sun detail")} className="h-full w-full object-cover" loading="lazy" />
       </div>
 
       <div className="mt-12 max-w-3xl space-y-5 text-muted-foreground">
