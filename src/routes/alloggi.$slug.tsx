@@ -147,6 +147,7 @@ const data: Record<string, Alloggio> = {
     letto: ["Letto matrimoniale", "Double bed"],
     bagno: ["Bagno privato con doccia", "Private bathroom with shower"],
     servizi: true,
+    lavastoviglie: true,
   },
   andrea: {
     nome: "Andrew",
