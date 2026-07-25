@@ -14,6 +14,7 @@ import {
   Tv,
   WashingMachine,
   Sparkles,
+  Droplets,
 } from "lucide-react";
 import riccardoImg from "../assets/riccardo.jpeg.asset.json";
 import andreaImg from "../assets/andrea.png.asset.json";
