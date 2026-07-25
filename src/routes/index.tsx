@@ -1,9 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import corteIngressoHero from "../assets/corte-ingresso-hero.jpg.asset.json";
+import corteIngressoHero from "../assets/home/ingresso-arco.jpg.asset.json";
 import riccardoImg from "../assets/riccardo.jpeg.asset.json";
 import andreaImg from "../assets/andrea.png.asset.json";
 import giorgioImg from "../assets/giorgio.jpeg.asset.json";
-import homeLibro from "../assets/home/libro.jpeg.asset.json";
+import homeLibro from "../assets/home/lavabo-scala.jpg.asset.json";
 import homeMadonna from "../assets/home/madonna.jpeg.asset.json";
 import homeBrocca from "../assets/home/brocca.png.asset.json";
 import { MapEmbed } from "../components/MapEmbed";
