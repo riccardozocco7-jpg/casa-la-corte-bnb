@@ -132,7 +132,7 @@ const serviziComuniList: { icon: typeof DoorOpen; label: [string, string] }[] = 
   { icon: Wifi, label: ["Wi-Fi gratuita", "Free Wi-Fi"] },
   { icon: Tv, label: ["TV", "TV"] },
   { icon: WashingMachine, label: ["Lavatrice", "Washing machine"] },
-  { icon: Sparkles, label: ["Coperte di lino", "Linen bedding"] },
+  { icon: Sparkles, label: ["Lenzuola ricamate di lino", "Embroidered linen sheets"] },
 ];
 
 const data: Record<string, Alloggio> = {
