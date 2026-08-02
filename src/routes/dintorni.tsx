@@ -6,6 +6,7 @@ import pescoluse from "../assets/dintorni/pescoluse.jpeg.asset.json";
 import torreVado from "../assets/dintorni/torre-vado.jpg.asset.json";
 import castro from "../assets/dintorni/castro.jpg.asset.json";
 import specchia from "../assets/dintorni/specchia.webp.asset.json";
+import grottaVerde from "../assets/dintorni/grotta-verde.jpg.asset.json";
 import { useT } from "../lib/i18n";
 
 export const Route = createFileRoute("/dintorni")({
