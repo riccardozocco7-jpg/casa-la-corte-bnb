@@ -6,6 +6,7 @@ import pescoluse from "../assets/dintorni/pescoluse.jpeg.asset.json";
 import torreVado from "../assets/dintorni/torre-vado.jpg.asset.json";
 import castro from "../assets/dintorni/castro.jpg.asset.json";
 import specchia from "../assets/dintorni/specchia.webp.asset.json";
+import grottaVerde from "../assets/dintorni/grotta-verde.jpg.asset.json";
 import { useT } from "../lib/i18n";
 
 export const Route = createFileRoute("/dintorni")({
@@ -72,7 +73,7 @@ function Dintorni() {
         "Una cavità naturale sopra il mare in cui l'acqua assume riflessi verdi e smeraldini. Raggiungibile in giornata, regala uno spettacolo raro.",
         "A natural sea cave where the water takes on green and emerald reflections. A rare sight, perfect for a day trip.",
       ),
-      img: "",
+      img: grottaVerde.url,
     },
   ];
 
