@@ -60,7 +60,7 @@ function Home() {
               Salento · Tricase
             </p>
             <h1 className="font-serif text-5xl leading-tight md:text-6xl">
-              {t("Una dimora storica, un accoglienza di famiglia.", "A historic home, a family welcome.")}
+              {t("Una dimora storica, un'accoglienza di famiglia.", "A historic home, a family welcome.")}
             </h1>
             <p className="mt-6 max-w-md text-lg text-muted-foreground">
               {t(
