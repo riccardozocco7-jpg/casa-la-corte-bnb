@@ -73,7 +73,7 @@ function Dintorni() {
         "Una cavità naturale sopra il mare in cui l'acqua assume riflessi verdi e smeraldini. Raggiungibile in giornata, regala uno spettacolo raro.",
         "A natural sea cave where the water takes on green and emerald reflections. A rare sight, perfect for a day trip.",
       ),
-      img: "",
+      img: grottaVerde.url,
     },
   ];
 
