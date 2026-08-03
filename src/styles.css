@@ -74,6 +74,10 @@
   --ring: oklch(0.62 0.13 40);
 }
 
+html {
+  font-size: 18px;
+}
+
 body {
   font-family: var(--font-sans);
   background: var(--background);
