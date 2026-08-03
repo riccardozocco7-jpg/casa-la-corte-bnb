@@ -129,12 +129,11 @@ type Alloggio = {
 
 const serviziComuniList: { icon: typeof DoorOpen; label: [string, string] }[] = [
   { icon: DoorOpen, label: ["Ingresso indipendente", "Independent entrance"] },
-  { icon: UtensilsCrossed, label: ["Cucina attrezzata (induzione, fornetto, frigorifero)", "Equipped kitchen (induction, oven, fridge)"] },
+  { icon: UtensilsCrossed, label: ["Cucina attrezzata (induzione, frigorifero)", "Equipped kitchen (induction, fridge)"] },
   { icon: Wind, label: ["Aria condizionata", "Air conditioning"] },
   { icon: Wifi, label: ["Wi-Fi gratuita", "Free Wi-Fi"] },
   { icon: Tv, label: ["TV", "TV"] },
   { icon: WashingMachine, label: ["Lavatrice", "Washing machine"] },
-  { icon: Sparkles, label: ["Lenzuola ricamate di lino", "Embroidered linen sheets"] },
 ];
 
 const data: Record<string, Alloggio> = {
