@@ -165,8 +165,8 @@ const data: Record<string, Alloggio> = {
     nome: "George",
     tagline: ["Stanza di sopra con affaccio sul campanile della chiesa.", "Upstairs room facing the church bell tower."],
     descrizione: [
-      "È una piccola stanza ideale per coppie, da qui si può vedere il campanile della chiesa madre.",
-      "A small room ideal for couples, with a view of the main church's bell tower.",
+      "Piccolo monolocale completo di tutto con terrazzo pergolato adiacente. Ideale per singoli e giovani coppie in cerca di relax, magnifico al crepuscolo.\nDisponibile solo occasionalmente.",
+      "Small studio complete with everything with an adjacent pergolated terrace. Ideal for singles and young couples seeking relaxation, magnificent at twilight.\nAvailable only occasionally.",
     ],
     capacity: ["2 ospiti", "2 guests"],
     letto: ["Divano letto", "Sofa bed"],
