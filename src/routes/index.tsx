@@ -30,8 +30,8 @@ function Home() {
 
   const alloggi = [
     { slug: "riccardo", nome: "Richard", desc: t("Un accogliente bilocale, ideale per coppie o famiglie.", "A cosy two-room flat, ideal for couples or families."), img: riccardoImg.url },
-    { slug: "andrea", nome: "Andrew", desc: t("Monolocale luminoso e riservato.", "Bright and private studio."), img: andreaImg.url },
-    { slug: "giorgio", nome: "George", desc: t("Stanza di sopra con affaccio sul campanile della chiesa.", "Upstairs room facing the church bell tower."), img: giorgioImg.url },
+    { slug: "andrea", nome: "Andrew", desc: t("Open space luminoso e riservato.", "Bright and private open space studio."), img: andreaImg.url },
+    { slug: "giorgio", nome: "George", desc: t("Monolocale con terrazzo pergolato.", "Studio with pergolated terrace."), img: giorgioImg.url },
   ] as const;
 
   const servizi = [
