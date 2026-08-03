@@ -142,8 +142,8 @@ const data: Record<string, Alloggio> = {
     nome: "Richard",
     tagline: ["Un accogliente bilocale, ideale per coppie o famiglie.", "A cosy two-room flat, ideal for couples or families."],
     descrizione: [
-      "Un bilocale con volte a botte originali, sulle cui pareti è custodito un dipinto della Madonna di oltre due secoli. Ideale per una coppia o una famiglia in cerca di autenticità.",
-      "A two-room flat with original barrel vaults, whose walls host a Madonna painting more than two centuries old. Ideal for a couple or a family seeking authenticity.",
+      "Un bilocale con volte a botte originali, sulle cui pareti è custodito un dipinto della Madonna di oltre due secoli. E' un ampio open space, perfetto per coppie o viaggiatori singoli.",
+      "A two-room flat with original barrel vaults, whose walls host a Madonna painting more than two centuries old. It's a large open space, perfect for couples or solo travellers.",
     ],
     capacity: ["2/4 ospiti", "2/4 guests"],
     letto: ["Letto matrimoniale", "Double bed"],
