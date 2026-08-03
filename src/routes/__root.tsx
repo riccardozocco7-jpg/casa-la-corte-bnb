@@ -81,13 +81,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "B&B Marcello — Rifugio di famiglia nel Salento" },
+      { title: "Corte degli Angeli — Rifugio di famiglia nel Salento" },
       {
         name: "description",
         content:
           "B&B a conduzione familiare nel Salento: tre alloggi (Richard, Andrew, George), a pochi minuti dal mare di Pescoluse, Torre Vado e Castro.",
       },
-      { property: "og:title", content: "B&B Marcello — Salento" },
+      { property: "og:title", content: "Corte degli Angeli — Salento" },
       {
         property: "og:description",
         content: "Ospitalità familiare e sostenibile nel cuore del Salento.",
